@@ -1,13 +1,12 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import React from "react";
+import HeroSection from "~/components/HeroSection";
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
-}
+const Home = () => {
+  return (
+    <div className="flex flex-col w-full">
+      <HeroSection />
+    </div>
+  );
+};
 
-export default function Home() {
-  return <Welcome />;
-}
+export default Home;
