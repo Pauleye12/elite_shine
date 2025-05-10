@@ -42,3 +42,12 @@ body {
     ),
     url("/bookNow.jpg");
 }
+
+.joinNowBg {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.728),
+      rgba(0, 0, 0, 0.672)
+    ),
+    url("/joinPlan2.jpg");
+}

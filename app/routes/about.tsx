@@ -7,12 +7,11 @@ import WhyChooseUs from "~/components/WhyChooseUs";
 
 const about = () => {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col pt-[80px] w-full">
       <AboutUs />
       <WhyChooseUs />
       <BookUs />
       <MeetTeam />
-      <Footer />
     </div>
   );
 };

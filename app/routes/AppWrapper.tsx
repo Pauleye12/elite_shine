@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router";
+import Footer from "../components/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,9 +16,10 @@ export function meta({}: Route.MetaArgs) {
 
 export default function AppWrapper() {
   return (
-    <div className="w-full flex flex-col items-center ">
+    <div className="w-full bg-black flex flex-col items-center ">
       <Navbar />
       <Outlet />
+      <Footer />
     </div>
   );
 }

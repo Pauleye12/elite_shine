@@ -21,7 +21,6 @@ const Home = () => {
       <PhotoGallery />
       <Newsletter />
       <OurContact />
-      <Footer />
     </div>
   );
 };
