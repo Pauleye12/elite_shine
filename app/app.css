@@ -33,3 +33,12 @@ body {
   height: 100vh;
   width: 100%;
 }
+
+.bookNowBg {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.702),
+      rgba(0, 0, 0, 0.624)
+    ),
+    url("/bookNow.jpg");
+}

@@ -1,29 +1,27 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { NavLink } from "react-router";
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 50) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
   return (
     <div
-      className={`w-full fixed top-0 left-0 right-0 z-10 flex border-b border-white justify-center px-[60px] py-5 items-center ${
-        scrolled ? "bg-[#000000e1]" : "bg-transparent"
-      }`}
+      className={`w-full fixed top-0 left-0 right-0 z-10 flex border-b border-white justify-center px-[60px] bg-[#000000e1] py-5 items-center `}
     >
       <div className=" w-full max-w-[1200px] flex justify-between items-center">
         <div>
