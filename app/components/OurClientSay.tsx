@@ -1,4 +1,3 @@
-import React from "react";
 import { LeftNavArrow, QuotesIcon, RightNavArrow } from "./SVGs";
 import ClientCard from "./ClientCard";
 

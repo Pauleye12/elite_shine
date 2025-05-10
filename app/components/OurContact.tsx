@@ -1,5 +1,3 @@
-import React from "react";
-
 const OurContact = () => {
   return (
     <div className="bg-[#FFFFFF] px-[60px] py-[100px] flex justify-center items-center ">

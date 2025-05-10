@@ -1,5 +1,3 @@
-import React from "react";
-
 const Newsletter = () => {
   return (
     <div className="w-full py-[100px] px-[60px] flex justify-center items-center bg-[#F2EFEA] bg-[url(/newsBG.png)] bg-no-repeat bg-cover">

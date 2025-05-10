@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutUs = () => {
   return (
     <div className="w-full flex pt-[100px] bg-[#ebebeb]  justify-center items-center px-[60px]  ">

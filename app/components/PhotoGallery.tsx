@@ -1,5 +1,3 @@
-import React from "react";
-
 const images = [
   "/PG1.png",
   "/PG2.png",

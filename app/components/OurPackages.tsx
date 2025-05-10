@@ -1,4 +1,3 @@
-import React from "react";
 import PrimaryBtn from "./PrimaryBtn";
 import PackagesCard from "./PackagesCard";
 

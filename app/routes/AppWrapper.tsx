@@ -1,4 +1,4 @@
-import type { Route } from "./+types/Home";
+import type { Route } from "./+types/home";
 import Navbar from "../components/Navbar";
 import { Outlet } from "react-router";
 

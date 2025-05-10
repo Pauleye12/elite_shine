@@ -1,11 +1,4 @@
-import React from "react";
-import {
-  ArrowRight,
-  CallUs,
-  HeroFacebook,
-  HeroInstagram,
-  HeroTiktok,
-} from "./SVGs";
+import { CallUs, HeroFacebook, HeroInstagram, HeroTiktok } from "./SVGs";
 import PrimaryBtn from "./PrimaryBtn";
 const HeroSection = () => {
   return (

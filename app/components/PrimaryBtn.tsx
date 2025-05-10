@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowRight } from "./SVGs";
 const PrimaryBtn = ({ content }: { content: string }) => {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import AboutUs from "~/components/AboutUs";
 import ArtOfDetailing from "~/components/ArtOfDetailing";
 import Footer from "~/components/Footer";

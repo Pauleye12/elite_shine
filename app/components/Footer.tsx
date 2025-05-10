@@ -1,4 +1,3 @@
-import React from "react";
 import { HeroFacebook, HeroInstagram, HeroTiktok, WhatsappIcon } from "./SVGs";
 import { Link } from "react-router";
 
