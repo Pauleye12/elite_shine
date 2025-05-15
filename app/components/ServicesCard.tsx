@@ -1,5 +1,24 @@
 import { Link } from "react-router";
 import { ArrowLink } from "./SVGs";
+import { motion } from "motion/react";
+
+// VARIANTS
+
+const serviceCardVariants = {
+  initial: {
+    opacity: 0,
+    scale: 0.5,
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 0.2,
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
 
 const ServicesCard = ({
   id,
@@ -13,7 +32,10 @@ const ServicesCard = ({
   image: string;
 }) => {
   return (
-    <div
+    <motion.div
+      variants={serviceCardVariants}
+      initial="initial"
+      whileInView="animate"
       className={`flex max-w-[600px] w-full px-10 py-8 h-[450px] items-start flex-col justify-between  bg-cover bg-center bg-no-repeat text-white font-bold`}
       style={{ backgroundImage: `url(${image})` }}
     >
@@ -33,7 +55,7 @@ const ServicesCard = ({
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,9 +1,50 @@
+import { Link } from "react-router";
+import { motion } from "motion/react";
+
+// VARIANTs
+const leftTextVariants = {
+  initial: {
+    x: -150,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.45,
+      delay: 0.2,
+      ease: "easeOut",
+    },
+  },
+};
+
+const rightTextVariants = {
+  initial: {
+    x: 150,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.45,
+      delay: 0.3,
+      ease: "easeOut",
+    },
+  },
+};
+
 const AboutUs = () => {
   return (
     <div className="w-full flex pt-[100px] bg-[#ebebeb]  justify-center items-center px-[60px]  ">
       <div className="max-w-[1200px] w-full items-center flex flex-col ">
         <div className="flex w-full items-start gap-5 justify-between  ">
-          <div className="flex max-w-[500px] flex-col w-full gap-3 items-start ">
+          <motion.div
+            variants={leftTextVariants}
+            initial="initial"
+            whileInView="animate"
+            className="flex max-w-[500px] flex-col w-full gap-3 items-start "
+          >
             <h1 className="text-black text-[70px] font-bold ">
               About <span className="text-[#C7361D]">Us</span>
             </h1>
@@ -11,22 +52,30 @@ const AboutUs = () => {
               At Elite Shine Detailing Ltd, we specialise in professional car
               valeting and detailing across Bolton and Greater Manchester.
             </p>
-          </div>
+          </motion.div>
           <div className="  ">
             <img className="object-fit" src="/aboutUs1.png" alt="" />
           </div>
         </div>
         <div className="flex w-full flex-row-reverse translate-y-[-90px] items-end gap-10 justify-between  ">
-          <div className="flex flex-col max-w-[500px] w-full gap-4 items-start ">
+          <motion.div
+            variants={rightTextVariants}
+            initial="initial"
+            whileInView="animate"
+            className="flex flex-col max-w-[500px] w-full gap-4 items-start "
+          >
             <p className="text-[#3D3D3D]  text-[20px] font-light ">
               Whether you’re looking for a quick valet or a full detail, our
               mobile and unit-based service gives your car the VIP treatment —
               at your convenience.
             </p>
-            <button className="border px-5 py-3 border-[#c7361d] text-[#c7361d]  ">
+            <Link
+              to="/services"
+              className="border px-5 py-3 border-[#c7361d] text-[#c7361d]  "
+            >
               Learn More
-            </button>
-          </div>
+            </Link>
+          </motion.div>
           <div className="w-full">
             <img className="object-fit" src="/aboutUs2.png" alt="" />
           </div>

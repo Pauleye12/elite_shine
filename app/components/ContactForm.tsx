@@ -35,6 +35,10 @@ const ContactForm = () => {
                 className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none border-none "
                 placeholder="Name"
                 type="text"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, name: e.target.value }))
+                }
                 name="name"
                 id="name"
               />
@@ -42,6 +46,10 @@ const ContactForm = () => {
                 className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none border-none "
                 placeholder="Email"
                 type="email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, email: e.target.value }))
+                }
                 name="email"
                 id="email"
               />
@@ -49,12 +57,23 @@ const ContactForm = () => {
                 className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none border-none "
                 placeholder="Phone number"
                 type="number"
+                value={formData.phoneNumber ?? "phone number"}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    phoneNumber: Number(e.target.value),
+                  }))
+                }
                 name="phoneNumber"
                 id="phoneNumber"
               />
               <textarea
                 className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none border-none "
                 placeholder="Message"
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, message: e.target.value }))
+                }
                 name="message"
                 id="message"
               ></textarea>

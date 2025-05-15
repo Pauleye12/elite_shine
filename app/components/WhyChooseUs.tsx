@@ -1,3 +1,5 @@
+import { usePopUp } from "~/Context/PopUpContext";
+
 import PrimaryBtn from "./PrimaryBtn";
 import WhyChooseUsCard from "./WhyChooseUsCard";
 
@@ -39,6 +41,7 @@ const packages = [
   },
 ];
 const WhyChooseUs = () => {
+  const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div className="flex bg-[#0D0C0C] justify-center items-center px-[60px] py-[120px]  ">
       <div className="max-w-[1200px] w-full grid grid-cols-2 gap-10 ">
@@ -53,7 +56,11 @@ const WhyChooseUs = () => {
             Experience the perfect blend of professionalism, reliability, and
             eco-conscious care — trusted by car owners and businesses alike.
           </p>
-          <div>
+          <div
+            onClick={() => {
+              setIsOpen(true), setPopUpMode("booking");
+            }}
+          >
             <PrimaryBtn content="Get a Quote" />
           </div>
         </div>

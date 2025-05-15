@@ -187,3 +187,40 @@ export const WhatsappIcon = () => {
     </svg>
   );
 };
+
+export const DropdownIcon = () => {
+  return (
+    <svg
+      width="20"
+      height="11"
+      viewBox="0 0 20 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.66699 1.66675L10.0003 10.0001L18.3337 1.66675"
+        stroke="black"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const CloseIcon = () => {
+  return (
+    <svg
+      width="44"
+      height="44"
+      viewBox="0 0 44 44"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M22 0.125C9.8125 0.125 0.125 9.8125 0.125 22C0.125 34.1875 9.8125 43.875 22 43.875C34.1875 43.875 43.875 34.1875 43.875 22C43.875 9.8125 34.1875 0.125 22 0.125ZM30.4375 32.9375L22 24.5L13.5625 32.9375L11.0625 30.4375L19.5 22L11.0625 13.5625L13.5625 11.0625L22 19.5L30.4375 11.0625L32.9375 13.5625L24.5 22L32.9375 30.4375L30.4375 32.9375Z"
+        fill="black"
+      />
+    </svg>
+  );
+};

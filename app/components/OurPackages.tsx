@@ -1,5 +1,23 @@
 import PrimaryBtn from "./PrimaryBtn";
 import PackagesCard from "./PackagesCard";
+import { Link } from "react-router";
+import { motion } from "motion/react";
+
+// VARIANTS
+const headerVariant = {
+  initial: {
+    y: -40,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: 0.35,
+    },
+  },
+};
 
 const packages = [
   {
@@ -29,17 +47,22 @@ const OurPackages = () => {
     <div className="flex bg-[#0D0C0C] justify-center items-center px-[60px] py-[100px]  ">
       <div className="max-w-[1200px] w-full grid grid-cols-2 gap-10 ">
         <div className="flex flex-col gap-5 w-full">
-          <h1 className="text-white font-bold text-[70px] leading-[70px] flex flex-col ">
+          <motion.h1
+            variants={headerVariant}
+            initial="initial"
+            whileInView="animate"
+            className="text-white font-bold text-[70px] leading-[70px] flex flex-col "
+          >
             Choose any of <span className="text-[#C7361D]">Our Packages</span>
-          </h1>
+          </motion.h1>
           <p className="text-white text-xl font-light">
             Our tailored plans and premium extras make it easier than ever to
             keep your vehicle looking its best — with convenience, consistency,
             and care.
           </p>
-          <div>
+          <Link to="/services">
             <PrimaryBtn content="View all Services" />
-          </div>
+          </Link>
         </div>
         {packages.map((item, index) => (
           <PackagesCard key={index} {...item} />

@@ -8,8 +8,11 @@ import OurContact from "~/components/OurContact";
 import OurPackages from "~/components/OurPackages";
 import OurServices from "~/components/OurServices";
 import PhotoGallery from "~/components/PhotoGallery";
+// import { usePopUp } from "~/Context/PopUpContext";
+// import PopUp from "~/components/PopUp";
 
 const Home = () => {
+  // const { isOpen } = usePopUp();
   return (
     <div className="flex flex-col w-full">
       <HeroSection />

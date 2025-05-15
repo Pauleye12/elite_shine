@@ -1,4 +1,5 @@
 import ServicesCard from "./ServicesCard";
+import { motion } from "motion/react";
 
 const OurServicesData = [
   {
@@ -27,17 +28,36 @@ const OurServicesData = [
   },
 ];
 
+// const cardContainerVariant = {
+//   initial: {
+//     opacity: 1,
+//   },
+//   animate: {
+//     opacity: 1,
+//     transition: {
+//       duration: 0.1,
+//       when: "beforeChildren",
+//       staggerChildren: 0.2,
+//       delayChildren: 0.3,
+//     },
+//   },
+// };
+
 const OurServices = () => {
   return (
     <div className="w-full flex py-[100px] bg-white  justify-center items-center px-[60px]  ">
       <div className="max-w-[1200px]  w-full items-start justify-between flex gap-12 ">
-        <div className="flex flex-col w-full gap-10 items-start ">
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          className="flex flex-col w-full gap-10 items-start "
+        >
           <h1 className="text-[70px] font-bold max-w-[326px] w-full leading-[70px] text-black ">
             Our <span className="text-[#c7361d] ">Services</span>
           </h1>
           <ServicesCard key={OurServicesData[0].id} {...OurServicesData[0]} />
           <ServicesCard key={OurServicesData[2].id} {...OurServicesData[2]} />
-        </div>
+        </motion.div>
         <div className="w-full flex items-end justify-end  flex-col gap-10 ">
           <ServicesCard key={OurServicesData[1].id} {...OurServicesData[1]} />
           <ServicesCard key={OurServicesData[3].id} {...OurServicesData[3]} />

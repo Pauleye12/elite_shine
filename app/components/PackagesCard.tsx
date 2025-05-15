@@ -1,3 +1,5 @@
+import { usePopUp } from "~/Context/PopUpContext";
+
 const PackagesCard = ({
   name,
   price,
@@ -9,6 +11,7 @@ const PackagesCard = ({
   details: string;
   different: boolean;
 }) => {
+  const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div
       className={`flex flex-col items-start gap-5 px-8 pt-10 pb-5  ${
@@ -50,9 +53,16 @@ const PackagesCard = ({
         {details}
       </p>
       <button
-        className={`border w-[145px] h-[60px] flex justify-center items-center bg-white border-[#c7361d] text-[#c7361d] `}
+        onClick={() => {
+          setIsOpen(true), setPopUpMode("subscription");
+        }}
+        className={`border w-[145px] h-[60px] flex justify-center items-center bg-white border-[#c7361d] text-[#c7361d] transition-all duration-400 ${
+          different
+            ? "hover:bg-[#ffffffee]"
+            : "hover:text-white hover:bg-[#c7361d] "
+        } `}
       >
-        Book Now
+        Subscribe Now
       </button>
     </div>
   );

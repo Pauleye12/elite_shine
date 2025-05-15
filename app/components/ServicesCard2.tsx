@@ -1,3 +1,4 @@
+import { usePopUp } from "~/Context/PopUpContext";
 const ServicesCard2 = ({
   name,
   duration,
@@ -11,6 +12,7 @@ const ServicesCard2 = ({
   details: string;
   different: boolean;
 }) => {
+  const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div
       className={`pt-9 pb-5 px-10 flex flex-col items-start gap-5 ${
@@ -62,9 +64,14 @@ const ServicesCard2 = ({
       </p>
 
       <button
-        className={`border w-[145px] ml-11 h-[60px] font-medium text-[22px] flex justify-center items-center ${
-          different ? "bg-white" : "bg-transparent"
-        }  border-[#c7361d] text-[#c7361d]  `}
+        onClick={() => {
+          setIsOpen(true), setPopUpMode("booking");
+        }}
+        className={`border w-[145px] ml-11 h-[60px] font-medium text-[22px] flex justify-center items-center transition-all duration-400 ${
+          different
+            ? "bg-white hover:bg-[#ffffffee] "
+            : "bg-transparent hover:text-white hover:bg-[#c7361d]"
+        }  border-[#c7361d] text-[#c7361d]   `}
       >
         Book Now
       </button>

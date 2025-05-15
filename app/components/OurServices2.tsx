@@ -1,4 +1,5 @@
 import ServicesCard2 from "./ServicesCard2";
+import { usePopUp } from "~/Context/PopUpContext";
 
 const services = [
   {
@@ -45,6 +46,7 @@ const services = [
 ];
 
 const OurServices2 = () => {
+  const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div className="w-full flex py-[100px] bg-white  justify-center items-center px-[60px]  ">
       <div className="max-w-[1200px]  w-full items-start justify-between flex gap-12 ">
@@ -88,6 +90,9 @@ const OurServices2 = () => {
             </p>
 
             <button
+              onClick={() => {
+                setIsOpen(true), setPopUpMode("booking");
+              }}
               className={`border w-[145px] ml-11 h-[60px] font-medium text-[22px] flex justify-center items-center bg-transparent border-[#c7361d] text-[#c7361d]  `}
             >
               Book Now

@@ -5,14 +5,36 @@ import Footer from "~/components/Footer";
 import MeetTeam from "~/components/MeetTeam";
 import WhyChooseUs from "~/components/WhyChooseUs";
 
+import { motion } from "motion/react";
+
+const aboutPageVariant = {
+  initial: {
+    x: "100%",
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const about = () => {
   return (
-    <div className="flex flex-col pt-[80px] w-full">
+    <motion.div
+      variants={aboutPageVariant}
+      initial="initial"
+      animate="animate"
+      className="flex flex-col pt-[80px] w-full"
+    >
       <AboutUs />
       <WhyChooseUs />
       <BookUs />
       <MeetTeam />
-    </div>
+    </motion.div>
   );
 };
 

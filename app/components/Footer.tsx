@@ -1,7 +1,42 @@
 import { HeroFacebook, HeroInstagram, HeroTiktok, WhatsappIcon } from "./SVGs";
 import { Link } from "react-router";
+import { usePopUp } from "~/Context/PopUpContext";
+import { motion } from "motion/react";
+
+// VARIANTS
+
+const footerWrapperVariant = {
+  initial: {
+    opacity: 1,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      duration: 0,
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const footerItemsVariants = {
+  initial: {
+    x: -70,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      ease: "easeOut",
+
+      duration: 0.25,
+    },
+  },
+};
 
 const Footer = () => {
+  const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div className="w-full bg-[#0D0C0C] flex flex-col pt-[130px] justify-center items-center gap-12">
       <div className="w-full px-[60px] flex justify-center items-center ">
@@ -50,34 +85,59 @@ const Footer = () => {
           </div>
           <div className="text-white flex flex-col items-start gap-9 ">
             <h1 className="font-medium text-[34px]  ">Quick Links</h1>
-            <ul className="flex flex-col font-medium text-[22px] items-start gap-7 ">
-              <li>
-                <Link to={""}>Home</Link>
-              </li>
-              <li>
-                <Link to={""}>About Us</Link>
-              </li>
-              <li>
-                <Link to={""}>Services</Link>
-              </li>
-              <li>
-                <Link to={""}>Book an Appointment</Link>
-              </li>
-            </ul>
+            <motion.ul
+              variants={footerWrapperVariant}
+              initial="initial"
+              whileInView="animate"
+              className="flex flex-col font-medium text-[22px] items-start gap-7 "
+            >
+              <motion.li
+                variants={footerItemsVariants}
+                className="hover:text-[#c7361d] transition-all duration-400 "
+              >
+                <Link to={"/"}>Home</Link>
+              </motion.li>
+              <motion.li
+                variants={footerItemsVariants}
+                className="hover:text-[#c7361d] transition-all duration-400 "
+              >
+                <Link to={"/about"}>About Us</Link>
+              </motion.li>
+              <motion.li
+                variants={footerItemsVariants}
+                className="hover:text-[#c7361d] transition-all duration-400 "
+              >
+                <Link to={"/services"}>Services</Link>
+              </motion.li>
+              <motion.li
+                variants={footerItemsVariants}
+                onClick={() => {
+                  setIsOpen(true), setPopUpMode("booking");
+                }}
+                className=" cursor-pointer hover:text-[#c7361d] transition-all duration-400  "
+              >
+                Book an Appointment
+              </motion.li>
+            </motion.ul>
           </div>
           <div className="text-white flex flex-col items-start gap-9 ">
             <h1 className="font-medium text-[34px]  ">Legal & Privacy</h1>
-            <ul className="flex flex-col font-medium text-[22px] items-start gap-7 ">
-              <li>
+            <motion.ul
+              variants={footerWrapperVariant}
+              initial="initial"
+              whileInView="animate"
+              className="flex flex-col font-medium text-[22px] items-start gap-7 "
+            >
+              <motion.li variants={footerItemsVariants}>
                 <Link to={""}>Privacy Policy</Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={footerItemsVariants}>
                 <Link to={""}>Terms & Conditions</Link>
-              </li>
-              <li>
+              </motion.li>
+              <motion.li variants={footerItemsVariants}>
                 <Link to={""}>Accessibility Statement</Link>
-              </li>
-            </ul>
+              </motion.li>
+            </motion.ul>
           </div>
         </div>
       </div>

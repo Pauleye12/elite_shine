@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 const Newsletter = () => {
+  const [email, setEmail] = useState("");
   return (
     <div className="w-full py-[100px] px-[60px] flex justify-center items-center bg-[#F2EFEA] bg-[url(/newsBG.png)] bg-no-repeat bg-cover">
       <div className="w-full flex gap-12 max-w-[1200px] justify-between items-center">
@@ -15,6 +18,8 @@ const Newsletter = () => {
               className="outliine-none border border-[#C7361D]  text-[#939393] h-[60px] px-4 py-2 "
               type="email"
               name=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
               id=""
             />{" "}

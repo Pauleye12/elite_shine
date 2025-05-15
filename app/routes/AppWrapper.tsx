@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar";
 import { Outlet } from "react-router";
 import Footer from "../components/Footer";
 
+import PopUp from "~/components/PopUp";
+import { usePopUp } from "~/Context/PopUpContext";
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Elite Shine" },
@@ -15,11 +18,13 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function AppWrapper() {
+  const { isOpen } = usePopUp();
   return (
     <div className="w-full bg-black flex flex-col items-center ">
       <Navbar />
       <Outlet />
       <Footer />
+      {isOpen && <PopUp />}
     </div>
   );
 }
