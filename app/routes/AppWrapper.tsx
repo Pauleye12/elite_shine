@@ -20,7 +20,7 @@ export function meta({}: Route.MetaArgs) {
 export default function AppWrapper() {
   const { isOpen } = usePopUp();
   return (
-    <div className="w-full bg-black flex flex-col items-center ">
+    <div className="w-full bg-black overflow-x-hidden flex flex-col items-center ">
       <Navbar />
       <Outlet />
       <Footer />

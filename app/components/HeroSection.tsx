@@ -76,7 +76,7 @@ const heroSocialBtnVariant = {
 const HeroSection = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
-    <div className="heroBG max-h-screen flex justify-center items-center h-full pt-[90px] px-[60px]  w-full">
+    <div className="heroBG max-h-screen flex justify-center items-center h-full pt-[90px] px-[30px] md:px-[60px]  w-full">
       <div className="max-w-[1200px] flex justify-between items-center w-full ">
         <motion.div
           variants={heroTextVariant}
@@ -84,11 +84,13 @@ const HeroSection = () => {
           animate="animate"
           className="max-w-[600px] w-full text-white flex flex-col gap-2 "
         >
-          <h2 className="text-2xl font-medium ">Bringing the Shine to You</h2>
-          <h1 className="text-[60px] leading-[70px] font-bold  ">
+          <h2 className="md:text-2xl font-medium ">
+            Bringing the Shine to You
+          </h2>
+          <h1 className="md:text-[60px] text-2xl md:leading-[70px] font-bold  ">
             Elite Mobile and Unit-Based Car Detailing
           </h1>
-          <div className="flex mt-10 gap-4 items-center   ">
+          <div className="flex flex-col md:flex-row mt-10 gap-4 md:items-center   ">
             <motion.div
               variants={heroButtonVariant}
               onClick={() => {
@@ -111,7 +113,7 @@ const HeroSection = () => {
           variants={heroSocialVariant}
           initial="initial"
           animate="animate"
-          className="flex flex-col gap-8 "
+          className="md:flex hidden flex-col gap-8 "
         >
           <motion.a
             variants={heroSocialBtnVariant}

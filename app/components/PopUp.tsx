@@ -28,26 +28,26 @@ const popUpVariant = {
 const PopUp = () => {
   const { isOpen, setIsOpen, popUpMode, setPopUpMode } = usePopUp();
   return (
-    <div className="bg-[#00000061] z-50 w-full fixed top-0 left-0 h-screen flex justify-center items-center px-7 py-4 ">
+    <div className="bg-[#00000061] z-50 w-full fixed top-0 left-0 h-screen flex justify-center items-center px-3 md:px-7 py-4 ">
       <motion.div
         variants={popUpVariant}
         initial="initial"
         animate="animate"
-        className="bg-[#EBEBEB] max-w-[700px] w-full px-[50px] py-[50px] relative flex justify-center flex-col gap-5  "
+        className="bg-[#EBEBEB] max-w-[700px] w-full px-[20px] md:px-[50px] py-[50px] relative flex justify-center flex-col gap-3 md:gap-5  "
       >
         <button
           onClick={() => setIsOpen(false)}
-          className=" flex justify-center items-center absolute right-[50px] top-[30px] "
+          className=" flex justify-center items-center absolute right-[30px] top-[20px] "
         >
           <CloseIcon />
         </button>
         <div className="w-full justify-center items-center flex  ">
           {popUpMode === "booking" ? (
-            <h1 className="text-[#000000] font-bold text-[55px]  ">
+            <h1 className="text-[#000000] font-bold text-[30px] md:text-[55px]  ">
               Book a <span className="text-[#C7361D]">Service</span>
             </h1>
           ) : (
-            <h1 className="text-[#000000] font-bold text-[55px]  ">
+            <h1 className="text-[#000000] font-bold text-[30px] md:text-[55px]  ">
               Monthly <span className="text-[#C7361D]">Subscription</span>
             </h1>
           )}
@@ -56,10 +56,10 @@ const PopUp = () => {
         <div className="w-full flex justify-center items-center gap-4 ">
           <button
             onClick={() => setPopUpMode("booking")}
-            className="rounded-full p-1.5 bg-transparent border-2 border-[#C7361D] flex justify-center items-center  "
+            className="rounded-full p-[3px] md:p-1.5 bg-transparent border-2 border-[#C7361D] flex justify-center items-center  "
           >
             <span
-              className={`w-4.5 h-4.5 rounded-full ${
+              className={`md:w-4.5 md:h-4.5 w-2.5 h-2.5 rounded-full ${
                 popUpMode === "booking" ? "bg-[#C7361D]" : "bg-transparent"
               } `}
             ></span>
@@ -67,10 +67,10 @@ const PopUp = () => {
 
           <button
             onClick={() => setPopUpMode("subscription")}
-            className="rounded-full p-1.5 flex justify-center items-center bg-transparent border-2 border-[#C7361D] "
+            className="rounded-full p-[3px] md:p-1.5 flex justify-center items-center bg-transparent border-2 border-[#C7361D] "
           >
             <span
-              className={`w-4.5 h-4.5 rounded-full ${
+              className={`md:w-4.5 md:h-4.5 w-2.5 h-2.5 rounded-full ${
                 popUpMode === "subscription" ? "bg-[#C7361D]" : "bg-transparent"
               } `}
             ></span>

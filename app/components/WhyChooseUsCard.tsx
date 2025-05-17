@@ -13,7 +13,7 @@ const WhyChooseUsCard = ({
 }) => {
   return (
     <div
-      className={`flex flex-col items-start gap-[130px] px-8 pt-13 pb-8  ${
+      className={`flex flex-col items-start gap-[100px] md:gap-[130px] px-5 md:px-8 pt-10 md:pt-13 pb-8  ${
         different ? "bg-[#C7361D] text-white" : " bg-white  "
       } `}
     >
@@ -22,7 +22,7 @@ const WhyChooseUsCard = ({
       </div>
       <div className="flex flex-col gap-1 items-start ">
         <h1
-          className={`text-[40px] font-bold ${
+          className={` text-2xl md:text-[40px] font-bold ${
             different ? "text-white" : "text-black"
           }  `}
         >

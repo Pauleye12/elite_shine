@@ -1,6 +1,9 @@
 import { NavLink, Link } from "react-router";
 import { usePopUp } from "~/Context/PopUpContext";
 import { motion } from "motion/react";
+import { ToggleIcon } from "./SVGs";
+import { useState } from "react";
+import Sidebar from "./Sidebar";
 
 // VARIANTS
 const navbarVariants = {
@@ -54,10 +57,11 @@ const navbarLinksVariants = {
 
 const Navbar = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
+  const [openSideBar, setOpenSideBar] = useState(false);
 
   return (
     <div
-      className={`w-full fixed top-0 left-0 right-0 z-10 flex border-b border-white justify-center px-[60px] bg-[#000000e1] py-5 items-center `}
+      className={`w-full fixed top-0 left-0 right-0 z-10 flex border-b border-white justify-center px-[30px] md:px-[60px] bg-[#000000e1] py-5 items-center `}
     >
       <motion.div
         variants={navbarVariants}
@@ -67,13 +71,17 @@ const Navbar = () => {
       >
         <motion.div variants={navbarItemVariants}>
           <Link to="/">
-            <img src="/nav_logo.png" alt="Elite Shine Logo" />
+            <img
+              className="w-[62px] lg:w-full "
+              src="/nav_logo.png"
+              alt="Elite Shine Logo"
+            />
           </Link>
         </motion.div>
 
         <motion.div
           variants={navbarItemVariants}
-          className="flex gap-7 max-w-[400px] w-full font-medium text-white text-xl justify-between "
+          className="lg:flex gap-7 max-w-[400px] hidden w-full font-medium text-white text-xl justify-between "
         >
           <motion.div variants={navbarLinksVariants}>
             <NavLink
@@ -122,10 +130,20 @@ const Navbar = () => {
           onClick={() => {
             setIsOpen(true), setPopUpMode("booking");
           }}
-          className="bg-[#C7361D] hover:bg-[#c7371da0] transition-all duration-400 text-white px-6 py-3 text-xl font-medium "
+          className="bg-[#C7361D] hover:bg-[#c7371da0] transition-all hidden lg:flex duration-400 text-white px-6 py-3 text-xl font-medium "
         >
           Get a Quote
         </motion.button>
+
+        <motion.div
+          onClick={() => setOpenSideBar(!openSideBar)}
+          className="lg:hidden"
+          variants={navbarItemVariants}
+        >
+          <ToggleIcon />{" "}
+        </motion.div>
+
+        {openSideBar && <Sidebar setOpenSideBar={setOpenSideBar} />}
       </motion.div>
     </div>
   );

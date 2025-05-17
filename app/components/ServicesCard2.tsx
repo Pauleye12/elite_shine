@@ -15,7 +15,7 @@ const ServicesCard2 = ({
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div
-      className={`pt-9 pb-5 px-10 flex flex-col items-start gap-5 ${
+      className={`pt-9 pb-5 px-5 md:px-10 flex flex-col items-start gap-5 ${
         different
           ? "bg-[#C7361D] text-white "
           : "bg-[#FEF4F2] border border-[#C7361D]"
@@ -34,13 +34,13 @@ const ServicesCard2 = ({
           ></span>
         </span>
         <h1
-          className={`text-[40px] leading-[30px] font-bold gap-3 flex flex-col ${
+          className={`md:text-[40px] text-2xl leading-[22px] md:leading-[30px] font-bold gap-3 flex flex-col ${
             different ? "text-white" : "text-[#C7361D]"
           }  `}
         >
           {name}
           <span
-            className={`font-bold text-2xl ${
+            className={`font-bold md:text-2xl ${
               different ? "text-white" : "text-black"
             } `}
           >
@@ -50,7 +50,9 @@ const ServicesCard2 = ({
       </div>
 
       <p
-        className={`text-lg ml-11 ${different ? "text-white" : "text-black"}  `}
+        className={`md:text-lg ml-11 ${
+          different ? "text-white" : "text-black"
+        }  `}
       >
         {details}
       </p>
@@ -58,7 +60,7 @@ const ServicesCard2 = ({
       <p
         className={` ml-11 ${
           different ? "text-white" : "text-[#C7361D]"
-        } font-bold text-[38px] `}
+        } font-bold text-2xl md:text-[38px] `}
       >
         £ {price}
       </p>
@@ -67,7 +69,7 @@ const ServicesCard2 = ({
         onClick={() => {
           setIsOpen(true), setPopUpMode("booking");
         }}
-        className={`border w-[145px] ml-11 h-[60px] font-medium text-[22px] flex justify-center items-center transition-all duration-400 ${
+        className={`border w-[145px] ml-11 h-[60px] font-medium text-xl md:text-[22px] flex justify-center items-center transition-all duration-400 ${
           different
             ? "bg-white hover:bg-[#ffffffee] "
             : "bg-transparent hover:text-white hover:bg-[#c7361d]"

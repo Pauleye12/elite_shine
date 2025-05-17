@@ -36,48 +36,61 @@ const rightTextVariants = {
 
 const AboutUs = () => {
   return (
-    <div className="w-full flex pt-[100px] bg-[#ebebeb]  justify-center items-center px-[60px]  ">
-      <div className="max-w-[1200px] w-full items-center flex flex-col ">
-        <div className="flex w-full items-start gap-5 justify-between  ">
+    <div className="w-full flex pt-[50px] md:pt-[100px] pb-[100px] xl:pb-0 bg-[#ebebeb]  justify-center items-center px-0 md:px-[60px]  ">
+      <div className="max-w-[1200px] gap-10 xl:gap-0 w-full items-center flex flex-col ">
+        <div className="flex flex-col-reverse lg:flex-row w-full items-center lg:items-start gap-5 justify-between  ">
           <motion.div
             variants={leftTextVariants}
             initial="initial"
             whileInView="animate"
-            className="flex max-w-[500px] flex-col w-full gap-3 items-start "
+            viewport={{ once: true }}
+            className="flex lg:max-w-[500px] flex-col w-full gap-3 lg:items-start items-center  "
           >
-            <h1 className="text-black text-[70px] font-bold ">
+            <h1 className="text-black hidden lg:block text-headingMD md:text-headingLG   font-bold ">
               About <span className="text-[#C7361D]">Us</span>
             </h1>
-            <p className="text-[#3D3D3D] max-w-[400px] w-full text-[20px] font-light  ">
+            <p className="text-[#3D3D3D] lg:max-w-[400px] w-full md:text-[20px] px-[10px]  font-light  ">
               At Elite Shine Detailing Ltd, we specialise in professional car
               valeting and detailing across Bolton and Greater Manchester.
             </p>
           </motion.div>
-          <div className="  ">
-            <img className="object-fit" src="/aboutUs1.png" alt="" />
+          <div className=" w-full ">
+            <img
+              className="object-fit w-full lg:w-fit  "
+              src="/aboutUs1.png"
+              alt=""
+            />
           </div>
+          <h1 className="text-black lg:hidden text-headingMD md:text-headingLG   font-bold ">
+            About <span className="text-[#C7361D]">Us</span>
+          </h1>
         </div>
-        <div className="flex w-full flex-row-reverse translate-y-[-90px] items-end gap-10 justify-between  ">
+        <div className="flex w-full flex-col-reverse lg:flex-row-reverse xl:translate-y-[-30px] 2xl:translate-y-[-90px] lg:items-end items-center gap-10 justify-between  ">
           <motion.div
             variants={rightTextVariants}
             initial="initial"
             whileInView="animate"
-            className="flex flex-col max-w-[500px] w-full gap-4 items-start "
+            viewport={{ once: true }}
+            className="flex flex-col lg:max-w-[500px] w-full gap-4 items-start "
           >
-            <p className="text-[#3D3D3D]  text-[20px] font-light ">
+            <p className="text-[#3D3D3D] md:text-[20px] font-light px-[10px] ">
               Whether you’re looking for a quick valet or a full detail, our
               mobile and unit-based service gives your car the VIP treatment —
               at your convenience.
             </p>
             <Link
               to="/services"
-              className="border px-5 py-3 border-[#c7361d] text-[#c7361d]  "
+              className="border px-5 py-3 self-center border-[#c7361d] text-[#c7361d]  "
             >
               Learn More
             </Link>
           </motion.div>
           <div className="w-full">
-            <img className="object-fit" src="/aboutUs2.png" alt="" />
+            <img
+              className="object-fit w-full lg:w-fit "
+              src="/aboutUs2.png"
+              alt=""
+            />
           </div>
         </div>
       </div>

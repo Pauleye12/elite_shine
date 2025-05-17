@@ -48,17 +48,17 @@ const services = [
 const OurServices2 = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
-    <div className="w-full flex py-[100px] bg-white  justify-center items-center px-[60px]  ">
-      <div className="max-w-[1200px]  w-full items-start justify-between flex gap-12 ">
+    <div className="w-full flex md:py-[100px] py-[50px] bg-white  justify-center items-center px-[30px] md:px-[60px]  ">
+      <div className="max-w-[1200px]  w-full items-start justify-between flex flex-col lg:flex-row gap-12 ">
         <div className="flex flex-col w-full gap-10 items-start ">
-          <h1 className="text-[70px] font-bold max-w-[326px] w-full leading-[70px] text-black ">
+          <h1 className="text-headingMD md:text-headingLG    font-bold lg:max-w-[326px] w-full leading-[70px] text-center lg:text-left text-black ">
             Our <span className="text-[#c7361d] ">Services</span>
           </h1>
           {services.slice(0, 2).map((service, index) => (
             <ServicesCard2 key={index} {...service} />
           ))}
           <div
-            className={`pt-9 w-full pb-5 px-10 flex flex-col items-start gap-5 bg-[#FEF4F2] border border-[#C7361D]  `}
+            className={`pt-9 w-full pb-5 px-5 md:px-10 flex flex-col items-start gap-5 bg-[#FEF4F2] border border-[#C7361D]  `}
           >
             <div className="flex gap-3 items-start">
               <span
@@ -69,13 +69,13 @@ const OurServices2 = () => {
                 ></span>
               </span>
               <h1
-                className={`text-[40px] leading-[30px] font-bold gap-2 flex flex-col text-[#C7361D]  `}
+                className={`md:text-[40px] text-2xl leading-[22px] md:leading-[30px] font-bold gap-2 flex flex-col text-[#C7361D]  `}
               >
                 Extras/Add-Ons
               </h1>
             </div>
 
-            <ul className={`text-lg mt-3 ml-15 text-black list-disc  `}>
+            <ul className={`md:text-lg mt-3 ml-15 text-black list-disc  `}>
               {" "}
               <li>Pet hair removal</li>
               <li>Odour Neutralising treatment</li>
@@ -85,7 +85,9 @@ const OurServices2 = () => {
               <li>Ceramic coating (quote on request)</li>
             </ul>
 
-            <p className={` ml-11 text-[#C7361D]  font-bold text-[38px] `}>
+            <p
+              className={` ml-11 text-[#C7361D]  font-bold text-2xl md:text-[38px] `}
+            >
               Starting at £10
             </p>
 
@@ -93,7 +95,7 @@ const OurServices2 = () => {
               onClick={() => {
                 setIsOpen(true), setPopUpMode("booking");
               }}
-              className={`border w-[145px] ml-11 h-[60px] font-medium text-[22px] flex justify-center items-center bg-transparent border-[#c7361d] text-[#c7361d]  `}
+              className={`border w-[145px] ml-11 h-[60px] font-medium text-xl md:text-[22px] flex justify-center items-center bg-transparent border-[#c7361d] text-[#c7361d]  `}
             >
               Book Now
             </button>
@@ -103,21 +105,21 @@ const OurServices2 = () => {
           {services.slice(2, 5).map((service, index) => (
             <ServicesCard2 key={index} {...service} />
           ))}
-          <div className="flex w-full justify-between items-center">
+          <div className="flex w-full gap-5 justify-between items-center">
             <p className="text-lg w-[250px] uppercase font-light text-black flex items-center leading-[22px] gap-2 ">
-              <span className="text-[38px] text-[#C7361D] font-bold ">
+              <span className=" text-xl md:text-[38px] text-[#C7361D] font-bold ">
                 250%
               </span>
-              <span className="flex flex-col items-start">
-                cleaner <span>interior feel</span>
+              <span className="flex flex-col text-xs md:text-base items-start">
+                Higher <span>Productivity</span>
               </span>
             </p>
-            <p className="text-lg w-[250px] leading-[22px] font-light uppercase text-black flex items-center gap-2 text-end ">
-              <span className="text-[38px] text-[#C7361D] font-bold ">
+            <p className="text-lg w-full max-w-[250px] leading-[22px] font-light uppercase text-black flex items-center gap-2 text-end ">
+              <span className=" text-xl md:text-[38px] text-[#C7361D] font-bold ">
                 2.5X
               </span>
-              <span className="flex flex-col items-start">
-                longer <span>shine retention</span>
+              <span className="flex flex-col text-xs md:text-base items-start">
+                FASTER REMOTE <span>WORK PROCESS</span>
               </span>
             </p>
           </div>

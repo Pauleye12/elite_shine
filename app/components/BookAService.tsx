@@ -66,7 +66,7 @@ export const PersonalInfo = ({
   return (
     <form className="flex flex-col max-w-[500px] w-full gap-5 ">
       <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-4 outline-none border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Name"
         onChange={(e) => handleBookingDetails(e, "name")}
         value={bookingState.name}
@@ -75,7 +75,7 @@ export const PersonalInfo = ({
         id="name"
       />
       <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-4 outline-none border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Email"
         onChange={(e) => handleBookingDetails(e, "email")}
         value={bookingState.email}
@@ -84,7 +84,7 @@ export const PersonalInfo = ({
         id="email"
       />
       <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-4 outline-none border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Phone number"
         onChange={(e) => handleBookingDetails(e, "phone")}
         value={bookingState.phone ?? +447904929935}
@@ -93,7 +93,7 @@ export const PersonalInfo = ({
         id="phoneNumber"
       />
       <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-4 outline-none border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Your postcode"
         onChange={(e) => handleBookingDetails(e, "postcode")}
         value={bookingState.postcode}
@@ -103,7 +103,7 @@ export const PersonalInfo = ({
       />
 
       <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-4 outline-none border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Preferred date"
         onChange={(e) => handleBookingDetails(e, "date")}
         value={bookingState.date}
@@ -126,12 +126,12 @@ export const VehicleInfo = ({
       <h1>Vehicle Info</h1>
       <div
         onClick={() => setShowServiceOptions(!showServiceOptions)}
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none relative z-40 flex justify-between  items-center border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none relative z-40 flex justify-between  items-center border-none "
       >
         {vehicleDets.service ? vehicleDets.service : "Choose a service"}{" "}
         <DropdownIcon />
         {showServiceOptions && (
-          <div className="absolute bg-[#FEF4F2] px-8 py-5 -bottom-[380%] border-b-5 border-[#EBEBEB] left-0 w-full flex flex-col gap-4 ">
+          <div className="absolute bg-[#FEF4F2] px-5 py-2  md:px-8 md:py-4 md:-bottom-[380%] -bottom-[520%] border-b-5 border-[#EBEBEB] left-0 w-full flex flex-col gap-4 ">
             <button
               onClick={() => {
                 handleVehicleDetails("service", "Exterior Refresh (£25)"),
@@ -139,7 +139,7 @@ export const VehicleInfo = ({
               }}
               className="w-full flex justify-between gap-2 items-center text-[#3D3D3D] text-lg "
             >
-              <p>Exterior Refresh</p> <span>-----------</span> <p>£25</p>
+              <p>Exterior Refresh</p> <span>---------</span> <p>£25</p>
             </button>
             <button
               onClick={() => {
@@ -148,7 +148,7 @@ export const VehicleInfo = ({
               }}
               className="w-full flex justify-between gap-2 items-center text-[#3D3D3D] text-lg "
             >
-              <p>Interior Detail</p> <span>-----------</span> <p>£35</p>
+              <p>Interior Detail</p> <span>---------</span> <p>£35</p>
             </button>
             <button
               onClick={() => {
@@ -157,7 +157,7 @@ export const VehicleInfo = ({
               }}
               className="w-full flex justify-between gap-2 items-center text-[#3D3D3D] text-lg "
             >
-              <p>Mini Valet</p> <span>-----------</span> <p>£40</p>
+              <p>Mini Valet</p> <span>---------</span> <p>£40</p>
             </button>
             <button
               onClick={() => {
@@ -166,7 +166,7 @@ export const VehicleInfo = ({
               }}
               className="w-full flex justify-between gap-2 items-center text-[#3D3D3D] text-lg "
             >
-              <p>Full Valet</p> <span>-----------</span> <p>£60</p>
+              <p>Full Valet</p> <span>---------</span> <p>£60</p>
             </button>
             <button
               onClick={() => {
@@ -175,13 +175,13 @@ export const VehicleInfo = ({
               }}
               className="w-full flex justify-between gap-2 items-center text-[#3D3D3D] text-lg "
             >
-              <p>Full Detail Package</p> <span>-----------</span> <p>£100</p>
+              <p>Full Detail Package</p> <span>---------</span> <p>£100</p>
             </button>
           </div>
         )}
       </div>
       <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Vehicle Make & Model"
         type="text"
         onChange={(e) => handleVehicleDetails("make_model", undefined, e)}
@@ -191,12 +191,12 @@ export const VehicleInfo = ({
       />
       <div
         onClick={() => setShowVehicleTypeOptions(!showVehicleTypeOptions)}
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none relative flex justify-between  items-center border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none relative flex justify-between  items-center border-none "
       >
         {vehicleDets.vehicleType ? vehicleDets.vehicleType : "Vehicle Type"}{" "}
         <DropdownIcon />
         {showVehicleTypeOptions && (
-          <div className="absolute bg-[#FEF4F2] px-8 py-5 -bottom-[250%] border-b-5 z-40 border-[#EBEBEB] left-0 w-full flex flex-col gap-4 ">
+          <div className="absolute bg-[#FEF4F2] px-5 py-2  md:px-8 md:py-4 md:-bottom-[250%] -bottom-[330%] border-b-5 z-40 border-[#EBEBEB] left-0 w-full flex flex-col gap-4 ">
             <button
               onClick={() => {
                 handleVehicleDetails("vehicleType", "Car"),
@@ -228,7 +228,7 @@ export const VehicleInfo = ({
         )}
       </div>
       <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-8 py-5 outline-none border-none "
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Registration (Optional)"
         onChange={(e) => handleVehicleDetails("registration", undefined, e)}
         value={vehicleDets.registration}
@@ -271,14 +271,14 @@ export const OtherInfo = ({
   return (
     <form className="flex flex-col max-w-[500px] w-full gap-5 ">
       <h1 className="font-bold text-[24px] text-[#000000] ">Extras</h1>
-      <div className="w-full grid-cols-2 grid justify-between items-center gap-x-7 gap-y-4 ">
+      <div className="w-full grid-cols-2 grid justify-between items-center gap-x-3 md:gap-x-7 gap-y-4 ">
         {extraContent.map((extra, index) => (
           <label
             className="text-[#3D3D3D] text-lg flex items-center justify-stretch gap-1.5 "
             htmlFor={extra}
           >
             <input
-              className="w-5 h-5 accent-[#C7361D]"
+              className="md:w-5 md:h-5 accent-[#C7361D]"
               key={index}
               value={extra}
               type="checkbox"

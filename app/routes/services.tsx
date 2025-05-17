@@ -4,7 +4,7 @@ import OurServices2 from "~/components/OurServices2";
 
 const services = () => {
   return (
-    <div className="flex flex-col pt-[80px] w-full">
+    <div className="flex flex-col pt-[50px] md:pt-[80px] w-full">
       <OurServices2 />
       <OurPackages />
       <JoinAPlan />

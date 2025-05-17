@@ -27,19 +27,19 @@ const clientComments = [
 
 const OurClientSay = () => {
   return (
-    <div className="bg-white w-full flex justify-center items-center px-[60px] py-[100px] ">
+    <div className="bg-white w-full flex justify-center items-center px-5 md:px-[60px] md:py-[100px] py-[50px] ">
       <div className="max-w-[1200px] w-full flex flex-col gap-14  ">
-        <h1 className="flex flex-col leading-[70px] text-[70px] font-bold  items-start">
+        <h1 className="flex md:flex-col md:leading-[70px] text-headingMD md:text-headingLG gap-2 md:gap-0  font-bold text-center md:text-left justify-center md:justify-start items-start">
           Our
           <span>
             <span className="text-[#C7361D] ">Client</span> Says{" "}
           </span>
         </h1>
-        <div className="w-full flex justify-between gap-12 items-end ">
-          <div className="w-full">
+        <div className="w-full flex justify-between gap-12 xl:items-end ">
+          <div className="w-full hidden md:flex ">
             <img className="w-full object-cover" src="/clientSay.png" alt="" />
           </div>
-          <div className="w-full max-w-[600px] flex flex-col gap-9 ">
+          <div className="w-full xl:max-w-[600px] lg:max-w-[500px] max-w-[400px] flex flex-col gap-9 ">
             <div className="rounded-full w-[60px] h-[60px] bg-[#C7361d] flex justify-center items-center ">
               <QuotesIcon />
             </div>
@@ -53,12 +53,12 @@ const OurClientSay = () => {
             <div className="w-full flex justify-end items-center gap-5">
               <button
                 disabled
-                className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] w-[50px] h-[50px] justify-center flex items-center rounded-full  "
+                className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
               >
                 {" "}
                 <RightNavArrow />{" "}
               </button>
-              <button className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] w-[50px] h-[50px] justify-center flex items-center rounded-full  ">
+              <button className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  ">
                 {" "}
                 <LeftNavArrow />{" "}
               </button>

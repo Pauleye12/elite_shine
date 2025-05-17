@@ -14,7 +14,7 @@ const PackagesCard = ({
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div
-      className={`flex flex-col items-start gap-5 px-8 pt-10 pb-5  ${
+      className={`flex flex-col items-start gap-3 md:gap-5 md:px-8 px-4 pt-10 pb-5  ${
         different ? "bg-[#C7361D] text-white" : " bg-white  "
       } `}
     >
@@ -31,7 +31,7 @@ const PackagesCard = ({
           ></span>
         </span>
         <h1
-          className={`text-[40px] font-bold ${
+          className={` text-[36px] md:text-[40px] font-bold ${
             different ? "text-white" : "text-[#C7361D]"
           }  `}
         >
@@ -39,7 +39,7 @@ const PackagesCard = ({
         </h1>
       </div>
       <h1
-        className={`text-[40px] font-bold ${
+        className={` text-[36px] md:text-[40px] font-bold ${
           different ? "text-white" : "text-black"
         }  `}
       >

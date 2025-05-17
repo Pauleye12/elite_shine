@@ -28,7 +28,7 @@ const about = () => {
       variants={aboutPageVariant}
       initial="initial"
       animate="animate"
-      className="flex flex-col pt-[80px] w-full"
+      className="flex flex-col pt-[50px] md:pt-[80px] w-full"
     >
       <AboutUs />
       <WhyChooseUs />
