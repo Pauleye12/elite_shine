@@ -23,7 +23,7 @@ const Team = [
 ];
 const MeetTeam = () => {
   return (
-    <div className="bg-white w-full flex justify-center items-center px-[30px] md:px-[60px] md:py-[100px] py-[50px]  ">
+    <div className="bg-white w-full flex justify-center items-center px-5 md:px-[60px] md:py-[100px] py-[50px]  ">
       <div className="max-w-[1200px] gap-13 w-full flex flex-col items-center ">
         <h1 className="font-bold text-headingMD md:text-headingLG   text-black text-center w-full ">
           Meet The <span className="text-[#C7361D]">Team</span>

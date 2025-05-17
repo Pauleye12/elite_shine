@@ -44,7 +44,7 @@ const packages = [
 const WhyChooseUs = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
-    <div className="flex bg-[#0D0C0C] justify-center items-center md:px-[60px] px-[30px] py-[60px] md:py-[120px]  ">
+    <div className="flex bg-[#0D0C0C] justify-center items-center md:px-[60px] px-5 py-[60px] md:py-[120px]  ">
       <div className="max-w-[1200px] w-full grid lg:grid-cols-2 grid-cols-1 gap-10  ">
         <div className="flex flex-col gap-5 w-full">
           <h1 className="text-white font-bold text-headingMD md:text-headingLG   leading-[70px] text-center lg:text-left lg:flex lg:flex-col ">

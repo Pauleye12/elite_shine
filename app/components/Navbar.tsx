@@ -61,7 +61,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`w-full fixed top-0 left-0 right-0 z-10 flex border-b border-white justify-center px-[30px] md:px-[60px] bg-[#000000e1] py-5 items-center `}
+      className={`w-full fixed top-0 left-0 right-0 z-10 flex border-b border-white justify-center px-5 md:px-[60px] bg-[#000000e1] py-5 items-center `}
     >
       <motion.div
         variants={navbarVariants}

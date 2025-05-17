@@ -49,7 +49,7 @@ const AboutUs = () => {
             <h1 className="text-black hidden lg:block text-headingMD md:text-headingLG   font-bold ">
               About <span className="text-[#C7361D]">Us</span>
             </h1>
-            <p className="text-[#3D3D3D] lg:max-w-[400px] w-full md:text-[20px] px-[10px]  font-light  ">
+            <p className="text-[#3D3D3D] lg:max-w-[400px] w-full md:text-[20px] px-5 md:px-0  font-light  ">
               At Elite Shine Detailing Ltd, we specialise in professional car
               valeting and detailing across Bolton and Greater Manchester.
             </p>
@@ -73,7 +73,7 @@ const AboutUs = () => {
             viewport={{ once: true }}
             className="flex flex-col lg:max-w-[500px] w-full gap-4 items-start "
           >
-            <p className="text-[#3D3D3D] md:text-[20px] font-light px-[10px] ">
+            <p className="text-[#3D3D3D] md:text-[20px] font-light px-5 md:px-0 ">
               Whether you’re looking for a quick valet or a full detail, our
               mobile and unit-based service gives your car the VIP treatment —
               at your convenience.

@@ -48,7 +48,7 @@ const services = [
 const OurServices2 = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
-    <div className="w-full flex md:py-[100px] py-[50px] bg-white  justify-center items-center px-[30px] md:px-[60px]  ">
+    <div className="w-full flex md:py-[100px] py-[50px] bg-white  justify-center items-center px-5 md:px-[60px]  ">
       <div className="max-w-[1200px]  w-full items-start justify-between flex flex-col lg:flex-row gap-12 ">
         <div className="flex flex-col w-full gap-10 items-start ">
           <h1 className="text-headingMD md:text-headingLG    font-bold lg:max-w-[326px] w-full leading-[70px] text-center lg:text-left text-black ">

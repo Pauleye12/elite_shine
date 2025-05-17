@@ -25,7 +25,7 @@ const buttonVariant = {
 const BookUs = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
-    <div className="w-full bookNowBg bg-cover bg-no-repeat flex justify-center py-[80px] md:py-[170px] px-[30px] md:px-[100px] ">
+    <div className="w-full bookNowBg bg-cover bg-no-repeat flex justify-center py-[80px] md:py-[170px] px-5 md:px-[100px] ">
       <div className="max-w-[1200px] w-full flex flex-col justify-center items-center gap-5 ">
         <h1 className="lg:text-[60px] text-2xl md:text-[40px] font-bold text-white text-center w-full ">
           JOIN DOZENS OF SATISFIED CAR OWNERS WHO TRUST ELITE SHINE

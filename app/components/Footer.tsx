@@ -39,7 +39,7 @@ const Footer = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
     <div className="w-full bg-[#0D0C0C] flex flex-col pt-[80px] md:pt-[130px] justify-center items-center gap-12">
-      <div className="w-full px-[30px] md:px-[60px] flex justify-center items-center ">
+      <div className="w-full px-5 md:px-[60px] flex justify-center items-center ">
         <div className="max-w-[1200px] flex flex-col md:flex-row gap-14 md:gap-0 justify-between items-start  w-full">
           <div className="flex flex-col gap-10">
             <div>

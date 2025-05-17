@@ -45,7 +45,7 @@ const packages = [
 ];
 const OurPackages = () => {
   return (
-    <div className="flex bg-[#0D0C0C] justify-center items-center px-[30px] md:px-[60px] md:py-[100px] py-[50px]  ">
+    <div className="flex bg-[#0D0C0C] justify-center items-center px-5 md:px-[60px] md:py-[100px] py-[50px]  ">
       <div className="max-w-[1200px] w-full grid lg:grid-cols-2 grid-cols-1 gap-10 items-center ">
         <div className="flex flex-col gap-5 w-full">
           <motion.h1

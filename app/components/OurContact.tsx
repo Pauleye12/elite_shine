@@ -1,6 +1,6 @@
 const OurContact = () => {
   return (
-    <div className="bg-[#FFFFFF] px-[30px] md:px-[60px] md:py-[100px] py-[50px] flex flex-col justify-center items-center  ">
+    <div className="bg-[#FFFFFF] px-5 md:px-[60px] md:py-[100px] py-[50px] flex flex-col justify-center items-center  ">
       <h1 className="flex lg:hidden mb-13 gap-5 leading-[70px] text-headingMD md:text-headingLG font-bold  items-start">
         Our <span className="text-[#C7361d]">Contact</span>{" "}
       </h1>
