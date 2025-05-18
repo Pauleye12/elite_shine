@@ -82,12 +82,12 @@ const HeroSection = () => {
           variants={heroTextVariant}
           initial="initial"
           animate="animate"
-          className="max-w-[600px] w-full text-white flex flex-col gap-2 "
+          className="max-w-[700px] w-full text-white flex flex-col gap-2 "
         >
-          <h2 className="md:text-2xl font-medium ">
+          <h2 className="md:text-[28px] text-xl font-medium ">
             Bringing the Shine to You
           </h2>
-          <h1 className="md:text-[60px] text-2xl md:leading-[70px] font-bold  ">
+          <h1 className="md:text-[70px] text-3xl md:leading-[70px] font-bold  ">
             Elite Mobile and Unit-Based Car Detailing
           </h1>
           <div className="flex flex-col md:flex-row mt-10 gap-4 md:items-center   ">

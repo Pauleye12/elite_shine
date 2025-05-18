@@ -53,7 +53,7 @@ const OurPackages = () => {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="text-white text-center font-bold text-headingMD md:text-headingLG  leading-[45px] md:leading-[70px] flex flex-col "
+            className="text-white text-center lg:text-left font-bold text-headingMD md:text-headingLG  leading-[45px] md:leading-[70px] flex flex-col "
           >
             Choose any of <span className="text-[#C7361D]">Our Packages</span>
           </motion.h1>
@@ -70,9 +70,9 @@ const OurPackages = () => {
           <PackagesCard key={index} {...item} />
         ))}
 
-        <div className="w-full flex justify-center items-center ">
+        <div className="w-full lg:hidden flex justify-center items-center ">
           <Link
-            className=" hover:bg-[#c7371da0] border border-white transition-all duration-400 text-[20px] text-white font-medium w-fit self-center items-center lg:hidden flex gap-2 px-4 py-2    "
+            className=" hover:bg-[#c7371da0] bg-[#C7361D]   transition-all duration-400 text-[20px] text-white font-medium flex w-fit self-center items-center gap-2 px-5 py-4    "
             to="/services"
           >
             View all Services <ArrowRight />{" "}

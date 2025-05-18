@@ -12,7 +12,7 @@ const PhotoGallery = () => {
   return (
     <div className="w-full flex items-center bg-[#0D0C0C] flex-col md:py-[100px] py-[50px] gap-[50px] ">
       <div className="w-full px-[60px]  ">
-        <h1 className="max-w-[1200px] text-center 2xl:px-[60px] w-full text-white font-bold text-headingMD md:text-headingLG   leading-[70px]  ">
+        <h1 className="max-w-[1200px] text-center lg:text-left 2xl:px-[60px] w-full text-white font-bold text-headingMD md:text-headingLG   leading-[70px]  ">
           Photo <span className="text-[#c7361d]">Gallery</span>{" "}
         </h1>
       </div>
