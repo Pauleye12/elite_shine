@@ -13,6 +13,10 @@ export function meta({}: Route.MetaArgs) {
       name: "Elite Mobile and Unit-Based Car Detailing",
       content:
         "At Elite Shine Detailing Ltd, we specialise in professional car valeting and  detailing across Bolton and Greater Manchester.",
+      description:
+        "At Elite Shine Detailing Ltd, we specialise in professional car valeting and detailing across Bolton and Greater Manchester. - Elite shine",
+      keywords:
+        "mobile car detailing Manchester, car valet Manchester, interior car cleaning, exterior car wash, affordable car detailing, mobile valeting service",
     },
   ];
 }

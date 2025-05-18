@@ -90,7 +90,7 @@ export const PersonalInfo = ({
         className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
         placeholder="Phone number"
         onChange={(e) => handleBookingDetails(e, "phone")}
-        value={bookingState.phone ?? +447904929935}
+        value={bookingState.phone!}
         type="number"
         name="phoneNumber"
         id="phoneNumber"
