@@ -3,7 +3,8 @@ import { usePopUp } from "~/Context/PopUpContext";
 import BookAService from "./BookAService";
 import Subscription from "./Subscription";
 import { CloseIcon } from "./SVGs";
-import { easeOut, motion } from "motion/react";
+import { motion } from "motion/react";
+import Modal from "./Modal";
 
 // VARIANTS
 const popUpVariant = {
@@ -26,7 +27,15 @@ const popUpVariant = {
 };
 
 const PopUp = () => {
-  const { isOpen, setIsOpen, popUpMode, setPopUpMode } = usePopUp();
+  const {
+    isOpen,
+    setIsOpen,
+    popUpMode,
+    setPopUpMode,
+    confirmedModalOpen,
+    setConfirmedModalOpen,
+  } = usePopUp();
+
   return (
     <div className="bg-[#00000061] z-50 w-full fixed top-0 left-0 h-screen flex justify-center items-center px-3 md:px-7 py-4 ">
       <motion.div
@@ -35,6 +44,7 @@ const PopUp = () => {
         animate="animate"
         className="bg-[#EBEBEB] max-w-[700px] w-full px-[20px] md:px-[50px] py-[50px] relative flex justify-center flex-col gap-3 md:gap-5  "
       >
+        {confirmedModalOpen && <Modal />}
         <button
           onClick={() => setIsOpen(false)}
           className=" flex justify-center items-center absolute right-[30px] top-[20px] "

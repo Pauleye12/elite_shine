@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { DropdownIcon } from "./SVGs";
+import emailjs from "emailjs-com";
+import Loader from "./Loader";
+import { usePopUp } from "~/Context/PopUpContext";
+
 const bookingDetails = {
   name: "",
   email: "",
@@ -340,6 +344,8 @@ const BookAService = () => {
     useState<BookingDetails>(bookingDetails);
   const [screenNumber, setScreenNumber] = useState(1);
   const [formError, setFormError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { setConfirmedModalOpen } = usePopUp();
 
   const handleNextPage = () => {
     if (screenNumber > 2) {
@@ -355,34 +361,68 @@ const BookAService = () => {
     setScreenNumber((prev) => prev - 1);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    setLoading(true);
     setFormError("");
-    const {
-      name,
-      email,
-      phone,
-      postcode,
-      date,
-      vehicle,
-      extras,
-      terms_conditions,
-    } = bookingState;
-    if (
-      !name ||
-      !email ||
-      !phone ||
-      !postcode ||
-      !date ||
-      !vehicle.service ||
-      !vehicle.make_model ||
-      !vehicle.vehicleType ||
-      extras.length === 0 ||
-      !terms_conditions
-    ) {
-      setFormError("Please fill out all required fields.");
-      return;
+
+    try {
+      const {
+        name,
+        email,
+        phone,
+        postcode,
+        date,
+        vehicle,
+        extras,
+        terms_conditions,
+      } = bookingState;
+
+      if (
+        !name ||
+        !email ||
+        !phone ||
+        !postcode ||
+        !date ||
+        !vehicle.service ||
+        !vehicle.make_model ||
+        !vehicle.vehicleType ||
+        extras.length === 0 ||
+        !terms_conditions
+      ) {
+        setFormError("Please fill out all required fields.");
+        return;
+      }
+
+      console.log(bookingState);
+
+      const formattedBooking = {
+        name,
+        email,
+        phone: phone?.toString() || "",
+        postcode,
+        date,
+        service: vehicle.service,
+        make_model: vehicle.make_model,
+        vehicleType: vehicle.vehicleType,
+        registration: vehicle.registration,
+        extras: extras.join(", "),
+        otherInstructions: bookingState.otherInstructions,
+      };
+
+      const response = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formattedBooking,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setConfirmedModalOpen(true);
+      setBookingState(bookingDetails);
+    } catch (error) {
+      setFormError("Email sending failed. Please try again later.");
+    } finally {
+      setLoading(false);
     }
-    console.log(bookingState);
   };
 
   interface HandleBookingDetailsEvent
@@ -432,13 +472,17 @@ const BookAService = () => {
         >
           Previous
         </button>
-        <button
-          className="w-[120px] h-[50px] justify-center items-center flex text-white font-medium text-lg disabled:bg-[#888888] bg-[#C7361D] cursor-pointer disabled:cursor-not-allowed "
-          //   disabled={screenNumber > 2}
-          onClick={screenNumber === 3 ? handleSubmit : handleNextPage}
-        >
-          {screenNumber === 3 ? "Submit" : "Next"}
-        </button>
+        {loading ? (
+          <Loader />
+        ) : (
+          <button
+            className="w-[120px] h-[50px] justify-center items-center flex text-white font-medium text-lg disabled:bg-[#888888] bg-[#C7361D] cursor-pointer disabled:cursor-not-allowed "
+            //   disabled={screenNumber > 2}
+            onClick={screenNumber === 3 ? handleSubmit : handleNextPage}
+          >
+            {screenNumber === 3 ? "Submit" : "Next"}
+          </button>
+        )}
       </div>
       {formError && (
         <p className="text-red-500 -mt-[25px] font-500 ">{formError}</p>
