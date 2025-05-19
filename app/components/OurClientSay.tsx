@@ -1,4 +1,4 @@
-// import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import { LeftNavArrow, QuotesIcon, RightNavArrow } from "./SVGs";
 import ClientCard from "./ClientCard";
@@ -28,9 +28,9 @@ const clientComments = [
 ];
 
 const OurClientSay = () => {
-  // const scrollRef = useRef<HTMLDivElement>(null);
-  // const [atStart, setAtStart] = useState(true);
-  // const [atEnd, setAtEnd] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
 
   // const scroll = (direction: "left" | "right") => {
   //   if (scrollRef.current) {
@@ -42,35 +42,35 @@ const OurClientSay = () => {
   //   }
   // };
 
-  // const updateScrollPosition = () => {
-  //   const el = scrollRef.current;
-  //   if (!el) return;
+  const updateScrollPosition = () => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-  //   setAtStart(el.scrollLeft === 0);
-  //   setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth);
-  // };
+    setAtStart(el.scrollLeft === 0);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth);
+  };
 
-  // const scroll = (direction: "left" | "right") => {
-  //   const el = scrollRef.current;
-  //   if (!el) return;
+  const scroll = (direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-  //   const scrollAmount = 500;
-  //   const offset = direction === "left" ? -scrollAmount : scrollAmount;
+    const scrollAmount = 500;
+    const offset = direction === "left" ? -scrollAmount : scrollAmount;
 
-  //   el.scrollBy({ left: offset, behavior: "smooth" });
-  // };
+    el.scrollBy({ left: offset, behavior: "smooth" });
+  };
 
-  // useEffect(() => {
-  //   const el = scrollRef.current;
-  //   if (!el) return;
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-  //   // Initial check
-  //   updateScrollPosition();
+    // Initial check
+    updateScrollPosition();
 
-  //   // Listen to scroll events
-  //   el.addEventListener("scroll", updateScrollPosition);
-  //   return () => el.removeEventListener("scroll", updateScrollPosition);
-  // }, []);
+    // Listen to scroll events
+    el.addEventListener("scroll", updateScrollPosition);
+    return () => el.removeEventListener("scroll", updateScrollPosition);
+  }, []);
   return (
     <div className="bg-white w-full flex justify-center items-center px-5 md:px-[60px] md:py-[100px] py-[50px] ">
       <div className="max-w-[1200px] w-full flex flex-col gap-14  ">
@@ -88,7 +88,7 @@ const OurClientSay = () => {
             <div className="rounded-full w-[60px] h-[60px] bg-[#C7361d] flex justify-center items-center ">
               <QuotesIcon />
             </div>
-            <div className="overflow-x-scroll pb-5  ">
+            <div ref={scrollRef} className="overflow-x-scroll pb-5  ">
               <div className="min-w-max flex justify-between gap-6">
                 {clientComments.map((client, index) => (
                   <ClientCard key={index} {...client} />
@@ -97,22 +97,22 @@ const OurClientSay = () => {
             </div>
             <div className="w-full flex justify-end items-center gap-5">
               <button
-                // onClick={() => scroll("left")}
-                // disabled={atStart}
+                onClick={() => scroll("left")}
+                disabled={atStart}
                 className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
               >
                 {" "}
-                {/* <RightNavArrow fill={atStart ? "black" : "white"} />{" "} */}
-                <RightNavArrow />
+                <RightNavArrow fill={atStart ? "black" : "white"} />{" "}
+                {/* <RightNavArrow /> */}
               </button>
               <button
-                // onClick={() => scroll("right")}
-                // disabled={atEnd}
+                onClick={() => scroll("right")}
+                disabled={atEnd}
                 className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
               >
                 {" "}
-                {/* <LeftNavArrow fill={atEnd ? "black" : "white"} /> */}
-                <LeftNavArrow />{" "}
+                <LeftNavArrow fill={atEnd ? "black" : "white"} />
+                {/* <LeftNavArrow />{" "} */}
               </button>
             </div>
           </div>
