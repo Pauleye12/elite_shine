@@ -1,3 +1,5 @@
+import { useRef, useState, useEffect } from "react";
+
 import { LeftNavArrow, QuotesIcon, RightNavArrow } from "./SVGs";
 import ClientCard from "./ClientCard";
 
@@ -5,27 +7,70 @@ const clientComments = [
   {
     name: "Kathryn Murphy",
     comment:
-      "I had an amazing experience at Elite Shine! From the moment I arrived, the staff was friendly and professional, guiding me through their range of services. I opted for the full detailing package, and I couldn’t be more impressed with the result. My car looks brand new, with every inch meticulously cleaned and polished.",
+      "Great service from start to finish. They arrived on time and got straight to work. My car hadn’t been cleaned in months, and they brought it back to life. Interior looks and smells fresh. Would definitely book again.",
     image: "/client1.png",
     companyLogo: "/dyson.png",
   },
   {
     name: "Jane Cooper",
     comment:
-      "Elite Shine exceeded my expectations! I brought in my SUV after a long road trip, and it was in desperate need of some care. The team was efficient, courteous, and clearly passionate about what they do. When I picked it up, I was honestly shocked—it looked like it just rolled out of the showroom. I’ll definitely be back!",
+      "Used Elite Shine for a full valet before selling my car. They were professional, efficient, and the results were spot on. The buyer even commented on how clean it was.",
     image: "/client2.png",
     companyLogo: "/amazon.png",
   },
   {
     name: "Ralph Edwards",
     comment:
-      "Elite Shine exceeded my expectations. Booking was easy, and they were right on time. The team was super detailed and took great care of my car. I got the interior deep clean and honestly, it feels like I’m driving a new car. Even the little things like the dashboard and cup holders were spotless. Highly recommend!",
+      "I’ve tried a few local valeting services but these guys stand out. No upselling, just honest work. Booking was easy, they showed up on time, and the detail was impressive. Worth every penny.",
     image: "/client3.png",
     companyLogo: "/macDonalds.png",
   },
 ];
 
 const OurClientSay = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  // const scroll = (direction: "left" | "right") => {
+  //   if (scrollRef.current) {
+  //     const scrollAmount = 300;
+  //     scrollRef.current.scrollBy({
+  //       left: direction === "left" ? -scrollAmount : scrollAmount,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
+
+  const updateScrollPosition = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    setAtStart(el.scrollLeft === 0);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth);
+  };
+
+  const scroll = (direction: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const scrollAmount = 500;
+    const offset = direction === "left" ? -scrollAmount : scrollAmount;
+
+    el.scrollBy({ left: offset, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    // Initial check
+    updateScrollPosition();
+
+    // Listen to scroll events
+    el.addEventListener("scroll", updateScrollPosition);
+    return () => el.removeEventListener("scroll", updateScrollPosition);
+  }, []);
   return (
     <div className="bg-white w-full flex justify-center items-center px-5 md:px-[60px] md:py-[100px] py-[50px] ">
       <div className="max-w-[1200px] w-full flex flex-col gap-14  ">
@@ -43,7 +88,7 @@ const OurClientSay = () => {
             <div className="rounded-full w-[60px] h-[60px] bg-[#C7361d] flex justify-center items-center ">
               <QuotesIcon />
             </div>
-            <div className="overflow-x-scroll pb-5  ">
+            <div ref={scrollRef} className="overflow-x-scroll pb-5  ">
               <div className="min-w-max flex justify-between gap-6">
                 {clientComments.map((client, index) => (
                   <ClientCard key={index} {...client} />
@@ -52,15 +97,20 @@ const OurClientSay = () => {
             </div>
             <div className="w-full flex justify-end items-center gap-5">
               <button
-                disabled
+                onClick={() => scroll("left")}
+                disabled={atStart}
                 className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
               >
                 {" "}
-                <RightNavArrow />{" "}
+                <RightNavArrow fill={atStart ? "black" : "white"} />{" "}
               </button>
-              <button className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  ">
+              <button
+                onClick={() => scroll("right")}
+                disabled={atEnd}
+                className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
+              >
                 {" "}
-                <LeftNavArrow />{" "}
+                <LeftNavArrow fill={atEnd ? "black" : "white"} />{" "}
               </button>
             </div>
           </div>

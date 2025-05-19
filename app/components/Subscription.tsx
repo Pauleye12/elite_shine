@@ -3,12 +3,14 @@ import { DropdownIcon } from "./SVGs";
 import emailjs from "emailjs-com";
 import Loader from "./Loader";
 import { usePopUp } from "~/Context/PopUpContext";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const bookingDetails = {
   name: "",
   email: "",
   phone: null as number | null,
   postcode: "",
-  date: "",
+  date: null,
   vehicle: {
     service: "",
     make_model: "",
@@ -25,7 +27,7 @@ interface BookingDetails {
   email: string;
   phone: number | null;
   postcode: string;
-  date: string;
+  date: Date | null;
   vehicle: vehicleObjType;
   extras: string[];
   otherInstructions: string;
@@ -45,6 +47,7 @@ interface PersonalInfoProps {
     field: keyof BookingDetails
   ) => void;
   bookingState: BookingDetails;
+  setBookingState: React.Dispatch<React.SetStateAction<BookingDetails>>;
 }
 
 interface VehicleInfoProps {
@@ -65,6 +68,7 @@ interface OtherInfoProps {
 export const PersonalInfo = ({
   handleBookingDetails,
   bookingState,
+  setBookingState,
 }: PersonalInfoProps) => {
   return (
     <form className="flex flex-col max-w-[500px] w-full gap-5 ">
@@ -105,14 +109,19 @@ export const PersonalInfo = ({
         id="postcode"
       />
 
-      <input
-        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
-        placeholder="Preferred date"
-        onChange={(e) => handleBookingDetails(e, "date")}
-        value={bookingState.date}
-        type="date"
-        name="date"
-        id="date"
+      <DatePicker
+        selected={bookingState.date}
+        onChange={(date) =>
+          setBookingState((prev) => ({
+            ...prev,
+            date: date,
+          }))
+        }
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5! py-2!  md:px-8! md:py-4! outline-none w-full flex! items-center! border-none "
+        placeholderText="Preferred Date and Time"
+        timeInputLabel="Time:"
+        dateFormat="MM/dd/yyyy h:mm aa"
+        showTimeInput
       />
     </form>
   );
@@ -425,6 +434,7 @@ const Subscription = () => {
           <PersonalInfo
             handleBookingDetails={handleBookingDetails}
             bookingState={bookingState}
+            setBookingState={setBookingState}
           />
         ) : screenNumber === 2 ? (
           <VehicleInfo

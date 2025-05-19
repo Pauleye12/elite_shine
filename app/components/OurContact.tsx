@@ -14,7 +14,9 @@ const OurContact = () => {
               Address:
             </h2>
             <p className="font-medium md:text-[22px] text-[#4E4E4E] ">
-              Unit 7, Cliffsed Industrial Estate, Grays, Essex, UR74 5XY
+              <strong>We are mobile!</strong>
+              Serving Greater Manchester and its surrounding areas with
+              top-quality mobile car detailing and valeting services.
             </p>
           </div>
           <div className="flex flex-col gap-1 max-w-[350px] w-full ">

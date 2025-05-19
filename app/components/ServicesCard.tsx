@@ -49,7 +49,7 @@ const ServicesCard = ({
           </p>
           <Link
             className="bg-white rounded-full flex justify-center items-center w-[40px] h-[40px]"
-            to={""}
+            to={"/services"}
           >
             {" "}
             <ArrowLink />{" "}

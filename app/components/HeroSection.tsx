@@ -76,21 +76,21 @@ const heroSocialBtnVariant = {
 const HeroSection = () => {
   const { setIsOpen, setPopUpMode } = usePopUp();
   return (
-    <div className="heroBG max-h-screen flex justify-center items-center h-full pt-[90px] px-[30px] md:px-[60px]  w-full">
+    <div className="heroBG  flex justify-center items-center md:h-screen lg:pt-[90px] py-[130px] pb-[100px] lg:py-0 lg:pb-0 px-[30px] md:px-[60px]  w-full">
       <div className="max-w-[1200px] flex justify-between items-center w-full ">
         <motion.div
           variants={heroTextVariant}
           initial="initial"
           animate="animate"
-          className="max-w-[700px] w-full text-white flex flex-col gap-2 "
+          className="lg:max-w-[700px] max-w-[500px] w-full text-white flex flex-col gap-2 "
         >
-          <h2 className="md:text-[28px] text-xl font-medium ">
+          <h2 className="lg:text-[28px] text-xl font-medium ">
             Bringing the Shine to You
           </h2>
-          <h1 className="md:text-[70px] text-3xl md:leading-[70px] font-bold  ">
+          <h1 className="md:text-[40px] lg:text-[70px] text-3xl leading-[30px] md:leading-[50px] lg:leading-[80px] font-bold  ">
             Elite Mobile and Unit-Based Car Detailing
           </h1>
-          <div className="flex flex-col md:flex-row mt-10 gap-4 md:items-center   ">
+          <div className="flex mt-[60px] flex-col md:flex-row lg:mt-10 gap-4 md:items-center   ">
             <motion.div
               variants={heroButtonVariant}
               onClick={() => {
