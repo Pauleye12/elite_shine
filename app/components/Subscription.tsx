@@ -10,7 +10,7 @@ const bookingDetails = {
   email: "",
   phone: null as number | null,
   postcode: "",
-  date: null,
+  date: "",
   vehicle: {
     service: "",
     make_model: "",
@@ -27,7 +27,8 @@ interface BookingDetails {
   email: string;
   phone: number | null;
   postcode: string;
-  date: Date | null;
+  // date: Date | null;
+  date: string;
   vehicle: vehicleObjType;
   extras: string[];
   otherInstructions: string;
@@ -57,6 +58,7 @@ interface VehicleInfoProps {
     e?: React.ChangeEvent<HTMLInputElement>
   ) => void;
   vehicleDets: vehicleObjType;
+  popUpMode: string;
 }
 
 interface OtherInfoProps {
@@ -109,7 +111,17 @@ export const PersonalInfo = ({
         id="postcode"
       />
 
-      <DatePicker
+      <input
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
+        placeholder="Preferred date"
+        onChange={(e) => handleBookingDetails(e, "date")}
+        value={bookingState.date}
+        type="date"
+        name="date"
+        id="date"
+      />
+
+      {/* <DatePicker
         selected={bookingState.date}
         onChange={(date) =>
           setBookingState((prev) => ({
@@ -122,7 +134,7 @@ export const PersonalInfo = ({
         timeInputLabel="Time:"
         dateFormat="MM/dd/yyyy h:mm aa"
         showTimeInput
-      />
+      /> */}
     </form>
   );
 };
@@ -130,6 +142,7 @@ export const PersonalInfo = ({
 export const VehicleInfo = ({
   handleVehicleDetails,
   vehicleDets,
+  popUpMode,
 }: VehicleInfoProps) => {
   const [showSubscriptionOptions, setShowSubscriptionOptions] = useState(false);
   const [showVehicleTypeOptions, setShowVehicleTypeOptions] = useState(false);
@@ -140,39 +153,98 @@ export const VehicleInfo = ({
         onClick={() => setShowSubscriptionOptions(!showSubscriptionOptions)}
         className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none relative z-40 flex justify-between  items-center border-none "
       >
-        {vehicleDets.service ? vehicleDets.service : "Choose a subscription"}{" "}
+        {vehicleDets.service
+          ? vehicleDets.service
+          : popUpMode === "booking"
+          ? "Choose a Package"
+          : "Choose  booking"}{" "}
         <DropdownIcon />
-        {showSubscriptionOptions && (
-          <div className="absolute bg-[#FEF4F2] px-5 py-2  md:px-8 md:py-4 md:-bottom-[270%] -bottom-[320%] border-b-5 border-[#EBEBEB] left-0 w-full flex flex-col gap-4 ">
-            <button
-              onClick={() => {
-                handleVehicleDetails("service", "Basic Plan (£70/month)"),
-                  setShowSubscriptionOptions(!showSubscriptionOptions);
-              }}
-              className="w-full grid grid-cols-[120px_auto_auto] justify-between gap-2 items-center text-left text-[#3D3D3D] md:text-lg "
-            >
-              <p>Basic Plan</p> <span>---------</span> <p>£70/M</p>
-            </button>
-            <button
-              onClick={() => {
-                handleVehicleDetails("service", "Premium Plan (£120/month)"),
-                  setShowSubscriptionOptions(!showSubscriptionOptions);
-              }}
-              className="w-full grid grid-cols-[120px_auto_auto] justify-between gap-2 items-center text-left text-[#3D3D3D] md:text-lg "
-            >
-              <p>Premium Plan</p> <span>---------</span> <p>£35/M</p>
-            </button>
-            <button
-              onClick={() => {
-                handleVehicleDetails("service", "Find your fit (£0)"),
-                  setShowSubscriptionOptions(!showSubscriptionOptions);
-              }}
-              className="w-full grid grid-cols-[120px_auto_auto] justify-between gap-2 items-center text-left text-[#3D3D3D] md:text-lg "
-            >
-              <p>Find your fit</p> <span>---------</span> <p>£0.0/M</p>
-            </button>
-          </div>
-        )}
+        {showSubscriptionOptions &&
+          (popUpMode === "booking" ? (
+            <div className="absolute bg-[#FEF4F2] px-5 py-2  md:px-8 md:py-4 md:-bottom-[280px] -bottom-[320px] border-b-5 border-[#EBEBEB] left-0 w-full flex flex-col gap-4 ">
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Exterior Refresh (£25)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[1fr_auto_auto] justify-between gap-5 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p className="w-full">Exterior Refresh</p>{" "}
+                <span>---------</span> <p className="">£25</p>
+              </button>
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Interior Detail (£35)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[1fr_auto_auto] justify-between gap-5 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p className="w-full">Interior Detail</p> <span>---------</span>{" "}
+                <p className="w-full">£35</p>
+              </button>
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Mini Valet (£40)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[1fr_auto_auto] justify-between gap-5 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p className="w-full">Mini Valet</p> <span>---------</span>{" "}
+                <p className="w-full">£40</p>
+              </button>
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Full Valet (£60)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[1fr_auto_auto] justify-between gap-5 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p className="w-full">Full Valet</p> <span>---------</span>{" "}
+                <p className="w-full">£60</p>
+              </button>
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Full Detail Package (£100)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[1fr_auto_auto] justify-between gap-5 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p className="  w-full ">Full Detail Package</p>{" "}
+                <span className="text-center">---------</span>{" "}
+                <p className="text-right">£100</p>
+              </button>
+            </div>
+          ) : (
+            <div className="absolute bg-[#FEF4F2] px-5 py-2  md:px-8 md:py-4 md:-bottom-[270%] -bottom-[320%] border-b-5 border-[#EBEBEB] left-0 w-full flex flex-col gap-4 ">
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Basic Plan (£70/month)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[120px_auto_auto] justify-between gap-2 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p>Basic Plan</p> <span>---------</span> <p>£70/M</p>
+              </button>
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Premium Plan (£120/month)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[120px_auto_auto] justify-between gap-2 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p>Premium Plan</p> <span>---------</span> <p>£35/M</p>
+              </button>
+              <button
+                onClick={() => {
+                  handleVehicleDetails("service", "Find your fit (£0)"),
+                    setShowSubscriptionOptions(!showSubscriptionOptions);
+                }}
+                className="w-full grid grid-cols-[120px_auto_auto] justify-between gap-2 items-center text-left text-[#3D3D3D] md:text-lg "
+              >
+                <p>Find your fit</p> <span>---------</span> <p>£0.0/M</p>
+              </button>
+            </div>
+          ))}
       </div>
       <input
         className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
@@ -329,7 +401,7 @@ const Subscription = () => {
   const [screenNumber, setScreenNumber] = useState(1);
   const [formError, setFormError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { setConfirmedModalOpen } = usePopUp();
+  const { setConfirmedModalOpen, popUpMode } = usePopUp();
 
   const handleNextPage = () => {
     if (screenNumber > 2) {
@@ -385,7 +457,9 @@ const Subscription = () => {
         phone: phone?.toString() || "",
         postcode,
         date,
-        service: `${vehicle.service} (SUBSCRIPTION)`,
+        service: `${vehicle.service} ${
+          popUpMode === "booking" ? "(BOOKING)" : "(SUBSCRIPTION)"
+        } `,
         make_model: vehicle.make_model,
         vehicleType: vehicle.vehicleType,
         registration: vehicle.registration,
@@ -440,6 +514,7 @@ const Subscription = () => {
           <VehicleInfo
             handleVehicleDetails={handleVehicleDetails}
             vehicleDets={bookingState.vehicle}
+            popUpMode={popUpMode}
           />
         ) : (
           <OtherInfo

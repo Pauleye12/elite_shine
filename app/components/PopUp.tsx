@@ -1,6 +1,6 @@
 import React from "react";
 import { usePopUp } from "~/Context/PopUpContext";
-import BookAService from "./BookAService";
+// import BookAService from "./BookAService";
 import Subscription from "./Subscription";
 import { CloseIcon } from "./SVGs";
 import { motion } from "motion/react";
@@ -88,7 +88,7 @@ const PopUp = () => {
         </div>
 
         <div className="w-full  ">
-          {popUpMode === "booking" ? <BookAService /> : <Subscription />}
+          <Subscription />
         </div>
       </motion.div>
     </div>
