@@ -3,8 +3,12 @@ import { DropdownIcon } from "./SVGs";
 import emailjs from "emailjs-com";
 import Loader from "./Loader";
 import { usePopUp } from "~/Context/PopUpContext";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DateTimePicker from "react-datetime-picker";
+import "react-datetime-picker/dist/DateTimePicker.css";
+import "react-calendar/dist/Calendar.css";
+import "react-clock/dist/Clock.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 const bookingDetails = {
   name: "",
   email: "",
@@ -121,7 +125,7 @@ export const PersonalInfo = ({
         id="date"
       /> */}
 
-      <DatePicker
+      {/* <DatePicker
         selected={bookingState.date}
         onChange={(date) =>
           setBookingState((prev) => ({
@@ -131,6 +135,21 @@ export const PersonalInfo = ({
         }
         className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5! py-2!  md:px-8! md:py-4! outline-none w-full flex! items-center! border-none "
         placeholderText="Preferred Date and Time"
+      /> */}
+
+      <DateTimePicker
+        onChange={(value) =>
+          setBookingState((prev) => ({ ...prev, date: value }))
+        }
+        dayPlaceholder="DD"
+        hourPlaceholder="hh"
+        minutePlaceholder="mm"
+        monthPlaceholder="MMM"
+        yearPlaceholder="YYYY"
+        secondPlaceholder="ss"
+        value={bookingState.date}
+        format="MM/dd/yyyy HH:mm"
+        className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5! py-2!  md:px-8! md:py-4! outline-none w-full flex! items-center! border-none!"
       />
     </form>
   );
@@ -400,12 +419,6 @@ const Subscription = () => {
   const [loading, setLoading] = useState(false);
   const { setConfirmedModalOpen, popUpMode } = usePopUp();
 
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
   const handleNextPage = () => {
     if (screenNumber > 2) {
       return;
@@ -503,8 +516,6 @@ const Subscription = () => {
       ...prev,
       vehicle: { ...prev.vehicle, [field]: value || e?.target.value },
     }));
-
-  if (!hasMounted) return null;
 
   return (
     <div className="w-full flex flex-col gap-10 items-center  ">
