@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DropdownIcon } from "./SVGs";
 import emailjs from "emailjs-com";
 import Loader from "./Loader";
@@ -403,6 +403,12 @@ const Subscription = () => {
   const [loading, setLoading] = useState(false);
   const { setConfirmedModalOpen, popUpMode } = usePopUp();
 
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   const handleNextPage = () => {
     if (screenNumber > 2) {
       return;
@@ -500,6 +506,8 @@ const Subscription = () => {
       ...prev,
       vehicle: { ...prev.vehicle, [field]: value || e?.target.value },
     }));
+
+  if (!hasMounted) return null;
 
   return (
     <div className="w-full flex flex-col gap-10 items-center  ">
