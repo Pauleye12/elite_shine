@@ -7,6 +7,7 @@ import DateTimePicker from "react-datetime-picker";
 import "react-datetime-picker/dist/DateTimePicker.css";
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
+import { format } from "date-fns";
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
 const bookingDetails = {
@@ -472,7 +473,7 @@ const Subscription = () => {
         email,
         phone: phone?.toString() || "",
         postcode,
-        date,
+        date: format(new Date(date), "dd-MMM-yyyy h:mm aa"),
         service: `${vehicle.service} ${
           popUpMode === "booking" ? "(BOOKING)" : "(SUBSCRIPTION)"
         } `,
