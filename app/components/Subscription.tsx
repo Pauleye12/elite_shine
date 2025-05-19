@@ -131,9 +131,6 @@ export const PersonalInfo = ({
         }
         className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5! py-2!  md:px-8! md:py-4! outline-none w-full flex! items-center! border-none "
         placeholderText="Preferred Date and Time"
-        timeInputLabel="Time:"
-        dateFormat="MM/dd/yyyy h:mm aa"
-        showTimeInput
       />
     </form>
   );
