@@ -16,7 +16,7 @@ const aboutPageVariant = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.35,
       ease: "easeInOut",
     },
   },

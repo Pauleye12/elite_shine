@@ -1,4 +1,3 @@
-import React from "react";
 import ContactForm from "~/components/ContactForm";
 import OurContact from "~/components/OurContact";
 
@@ -13,7 +12,7 @@ const aboutPageVariant = {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.35,
       ease: "easeInOut",
     },
   },

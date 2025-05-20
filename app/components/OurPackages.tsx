@@ -22,21 +22,21 @@ const headerVariant = {
 
 const packages = [
   {
-    price: "£70/Month",
+    price: "£79.99/Month",
     name: "Basic Plan",
     details:
       "Two full valets a month and more — ideal for regular drivers. Join now and stay polished!",
     different: false,
   },
   {
-    price: "£120/Month",
+    price: "£139.99/Month",
     name: "Premium Plan",
     details:
       "Four full valets, engine bay clean, and perks — the full works for your car care. Subscribe today!",
     different: false,
   },
   {
-    price: "Starting at £10",
+    price: "Starting at £9.99",
     name: "Add-Ons",
     details:
       "Pet hair removal to ceramic coating — enhance your service with premium upgrades!",

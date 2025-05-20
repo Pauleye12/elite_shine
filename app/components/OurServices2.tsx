@@ -5,7 +5,7 @@ const services = [
   {
     name: "Interior Detail",
     duration: "45-60 mins",
-    price: 35,
+    price: 39.99,
     details:
       "Vacuumed from seats to boot, with dashboard and trims cleaned to perfection. Crisp windows and a fresh scent give your cabin that clean, inviting feel.",
     different: false,
@@ -13,7 +13,7 @@ const services = [
   {
     name: "Full Valet",
     duration: "90 mins",
-    price: 60,
+    price: 59.99,
     details:
       "A full-body reset: exterior wash and wax, deep interior clean, and shampooed seats and carpets. Finished with tyre and trim dressing for that complete, polished look.",
     different: true,
@@ -21,7 +21,7 @@ const services = [
   {
     name: "Exterior Refresh",
     duration: "30-45 mins",
-    price: 25,
+    price: 29.99,
     details:
       "Snow foam pre-wash, a careful hand wash, and a microfiber dry leave your car gleaming. Finished with tyre shine and spotless windows for a sharp, everyday look.",
     different: true,
@@ -29,7 +29,7 @@ const services = [
   {
     name: "Mini Valet",
     duration: "60 mins",
-    price: 40,
+    price: 39.99,
     details:
       "Combines a basic exterior wash with a focused interior clean. Includes vacuuming, dashboard wipedown, and windscreen polish — ideal for quick upkeep.",
     different: false,
@@ -38,7 +38,7 @@ const services = [
     name: "Full Detail Package",
     duration: "2-3 hours",
 
-    price: 100,
+    price: 99.99,
     details:
       "A complete top-to-bottom refresh, combining full exterior detailing with a deep interior cleanse. Ideal before selling or as seasonal upkeep to restore that like-new feel.",
     different: true,
