@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Link } from "react-router";
 import { ArrowLink } from "./SVGs";
 import { motion } from "motion/react";
@@ -31,6 +33,7 @@ const ServicesCard = ({
   description: string;
   image: string;
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <motion.div
       variants={serviceCardVariants}
@@ -48,11 +51,13 @@ const ServicesCard = ({
             {description}
           </p>
           <Link
-            className="bg-white rounded-full flex justify-center items-center w-[40px] h-[40px]"
+            className="bg-white hover:bg-[#C7361D] rounded-full flex justify-center items-center transition-all duration-300 hover:rotate-90 w-[40px] h-[40px]"
             to={"/services"}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
             {" "}
-            <ArrowLink />{" "}
+            <ArrowLink stroke={isHovered ? "white" : "#C7361D"} />{" "}
           </Link>
         </div>
       </div>

@@ -25,8 +25,10 @@ const ClientCard = ({
               alt=""
             />
           </div>
-          <div className="flex tra items-center gap-3">
-            <p>CEO of </p> <img src={companyLogo} alt="" />
+          <div className="flex items-center">
+            <p>
+              from <strong className="capitalize ">{companyLogo}</strong>{" "}
+            </p>
           </div>
         </div>
       </div>

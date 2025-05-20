@@ -69,6 +69,12 @@ button {
     url("/contectBg.jpg");
 }
 
+@media (min-width: 1024px) {
+  .contactBG {
+    background-image: none;
+  }
+}
+
 /* Loader CSS */
 
 .wrapper {

@@ -9,21 +9,21 @@ const clientComments = [
     comment:
       "Great service from start to finish. They arrived on time and got straight to work. My car hadn’t been cleaned in months, and they brought it back to life. Interior looks and smells fresh. Would definitely book again.",
     image: "/client1.png",
-    companyLogo: "/dyson.png",
+    companyLogo: "uber",
   },
   {
     name: "Jane Cooper",
     comment:
       "Used Elite Shine for a full valet before selling my car. They were professional, efficient, and the results were spot on. The buyer even commented on how clean it was.",
     image: "/client2.png",
-    companyLogo: "/amazon.png",
+    companyLogo: "B2B",
   },
   {
     name: "Ralph Edwards",
     comment:
       "I’ve tried a few local valeting services but these guys stand out. No upselling, just honest work. Booking was easy, they showed up on time, and the detail was impressive. Worth every penny.",
     image: "/client3.png",
-    companyLogo: "/macDonalds.png",
+    companyLogo: "Philips",
   },
 ];
 
@@ -99,7 +99,7 @@ const OurClientSay = () => {
               <button
                 onClick={() => scroll("left")}
                 disabled={atStart}
-                className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
+                className="disabled:bg-transparent disabled:border disabled:scale-100 disabled:cursor-not-allowed border-black hover:scale-110 transition-all duration-300 bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
               >
                 {" "}
                 <RightNavArrow fill={atStart ? "black" : "white"} />{" "}
@@ -108,7 +108,7 @@ const OurClientSay = () => {
               <button
                 onClick={() => scroll("right")}
                 disabled={atEnd}
-                className="disabled:bg-transparent disabled:border border-black bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
+                className="disabled:bg-transparent disabled:border disabled:scale-100 disabled:cursor-not-allowed border-black hover:scale-110 transition-all duration-300 bg-[#C7361D] md:w-[50px] md:h-[50px] w-[30px] h-[30px]  justify-center flex items-center rounded-full  "
               >
                 {" "}
                 <LeftNavArrow fill={atEnd ? "black" : "white"} />

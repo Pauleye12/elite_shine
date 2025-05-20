@@ -54,7 +54,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 md:gap-8 items-center mt-3 ">
               <a
-                href="http://"
+                href="https://www.instagram.com/elite_shine_mcr"
                 className="border rounded-full border-white w-10 h-10 flex justify-center items-center"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -62,7 +62,7 @@ const Footer = () => {
                 <HeroInstagram />
               </a>
               <a
-                href="http://"
+                href="https://www.tiktok.com/@eliteshine_mcr?_t=ZM-8wVYyGDSK40&_r=1"
                 className="border rounded-full border-white w-10 h-10 flex justify-center items-center"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,7 +70,7 @@ const Footer = () => {
                 <HeroTiktok />
               </a>
               <a
-                href="http://"
+                href="https://www.facebook.com/share/15PsZDfM4u/"
                 className="border rounded-full border-white w-10 h-10 flex justify-center items-center"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -78,7 +78,7 @@ const Footer = () => {
                 <HeroFacebook />
               </a>
               <a
-                href="http://"
+                href="http://wa.me/+4407904929935"
                 className="border rounded-full border-white w-10 h-10 flex justify-center items-center"
                 target="_blank"
                 rel="noopener noreferrer"
