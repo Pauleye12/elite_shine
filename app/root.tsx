@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  BrowserRouter,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -48,9 +49,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <PopUpProvider>
-      <Outlet />
-    </PopUpProvider>
+    <BrowserRouter>
+      <PopUpProvider>
+        <Outlet />
+      </PopUpProvider>
+    </BrowserRouter>
   );
 }
 
