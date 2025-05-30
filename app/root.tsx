@@ -34,6 +34,41 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="At Elite Shine Detailing Ltd, we specialise in professional car valeting and detailing across Bolton and Greater Manchester."
+        />
+        <meta
+          name="keywords"
+          content="mobile car detailing Manchester, car valet Manchester, interior car cleaning, exterior car wash, affordable car detailing, mobile valeting service"
+        />
+        <meta name="author" content="Elite Shine" />
+
+        {/* Open Graph / Social Media Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Elite Shine - Professional Car Detailing Services"
+        />
+        <meta
+          property="og:description"
+          content="At Elite Shine Detailing Ltd, we specialise in professional car valeting and detailing across Bolton and Greater Manchester."
+        />
+        <meta property="og:image" content="/nav_logo.png" />
+        <meta property="og:url" content="https://eliteshine.co.uk" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Elite Shine - Professional Car Detailing Services"
+        />
+        <meta
+          name="twitter:description"
+          content="At Elite Shine Detailing Ltd, we specialise in professional car valeting and detailing across Bolton and Greater Manchester."
+        />
+        <meta name="twitter:image" content="/nav_logo.png" />
+
         <Meta />
         <Links />
       </head>

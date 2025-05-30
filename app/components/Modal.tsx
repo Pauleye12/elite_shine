@@ -36,7 +36,7 @@ const Modal = () => {
         </h1>
         <p className="text-gray-700 text-lg text-center max-w-[600px] w-full ">
           Your Order has been successfully taken, we will reach out through your
-          provided email.
+          provided email (Do Well to also check you spam folder).
         </p>
 
         <button
