@@ -108,7 +108,7 @@ export const PersonalInfo = ({
       />
       <input
         className="bg-[#FEF4F2] text-lg text-[#3D3D3D] px-5 py-2  md:px-8 md:py-4 outline-none border-none "
-        placeholder="Your postcode"
+        placeholder="Your Address"
         onChange={(e) => handleBookingDetails(e, "postcode")}
         value={bookingState.postcode}
         type="text"
@@ -465,7 +465,6 @@ const Subscription = () => {
         !vehicle.service ||
         !vehicle.make_model ||
         !vehicle.vehicleType ||
-        extras.length === 0 ||
         !terms_conditions
       ) {
         setFormError("Please fill out all required fields.");
